@@ -77,76 +77,6 @@
 
 <body>
 
-<script>
-const traducciones = {
-es:{
-quien:"¿Quién soy?",
-galeria:"Galería de trabajos",
-zonas:"Zonas",
-contacto:"Contacto",
-quiensoy:"¿Quién soy?",
-subtitulo:"Fontanero urgente 24/7 en Granollers",
-descripcion:"Profesionales en fontanería en Granollers y alrededores, especializados en reparaciones urgentes de tuberías, grifos, desagües y fugas de agua. Servicio rápido, eficiente y de confianza.",
-horario:"Horario: 24 horas al día",
-ubicacion:"Ubicación: Granollers, España",
-telefono:"Teléfono / WhatsApp:",
-aviso:"Aviso Legal",
-privacidad:"Política de Privacidad",
-politicaCookies:"Política de Cookies",
-ciudadestitle:"¿En qué ciudades trabajamos?",
-textoZonas:"Trabajamos en Granollers y municipios cercanos como Montmeló, La Roca del Vallès, Canovelles, Mollet y Cardedeu. Contacta con nosotros para atención inmediata.",
-electricista:"Electricista",
-fontanero:"Fontanero"
-},
-cat:{
-quien:"Qui sóc?",
-galeria:"Galeria de treballs",
-zonas:"Zones",
-contacto:"Contacte",
-quiensoy:"Qui sóc?",
-subtitulo:"Lampista urgent 24/7 a Granollers",
-descripcion:"Professionals en lampisteria a Granollers i voltants, especialitzats en reparacions urgents de canonades, aixetes, desguassos i fuites d'aigua. Servei ràpid, eficient i de confiança.",
-horario:"Horari: 24 hores al dia",
-ubicacion:"Ubicació: Granollers, Espanya",
-telefono:"Telèfon / WhatsApp:",
-aviso:"Avís Legal",
-privacidad:"Política de Privacitat",
-politicaCookies:"Política de Cookies",
-ciudadestitle:"¿En quines ciutats treballem?",
-textoZonas:"Treballem a Granollers i municipis propers com Montmeló, La Roca del Vallès, Canovelles, Mollet i Cardedeu. Contacta amb nosaltres per atenció immediata.",
-electricista:"Electricista",
-fontanero:"Lampista"
-},
-en:{
-quien:"Who am I?",
-galeria:"Work gallery",
-zonas:"Areas",
-contacto:"Contact",
-quiensoy:"Who am I?",
-subtitulo:"Urgent Plumber 24/7 in Granollers",
-descripcion:"Professional plumber in Granollers and nearby towns, specialized in urgent pipe repairs, faucet and drain maintenance, and water leak solutions. Fast, efficient, and reliable service.",
-horario:"Schedule: 24 hours a day",
-ubicacion:"Location: Granollers, Spain",
-telefono:"Phone / WhatsApp:",
-aviso:"Legal Notice",
-privacidad:"Privacy Policy",
-politicaCookies:"Cookies Policy",
-ciudadestitle:"In which cities do we work?",
-textoZonas:"We work in Granollers and nearby towns like Montmeló, La Roca del Vallès, Canovelles, Mollet and Cardedeu. Contact us for immediate assistance.",
-electricista:"Electrician",
-fontanero:"Plumber"
-}
-};
-
-function cambiarIdioma(idioma){
-    document.documentElement.lang = idioma;
-    document.querySelectorAll("[data-key]").forEach(elemento=>{
-        const key = elemento.getAttribute("data-key");
-        elemento.textContent = traducciones[idioma][key];
-    });
-}
-</script>
-
 <!-- HEADER -->
 <header>
 <div class="logo">
@@ -154,24 +84,18 @@ function cambiarIdioma(idioma){
 </div>
 
 <nav>
-<a href="#quien" data-key="quien">¿Quién soy?</a>
-<a href="#galeria" data-key="galeria">Galería de trabajos</a>
-<a href="#zonas" data-key="zonas">Zonas</a>
-<a href="#contacto" data-key="contacto">Contacto</a>
+<a href="#quien">¿Quién soy?</a>
+<a href="#galeria">Galería de trabajos</a>
+<a href="#zonas">Zonas</a>
+<a href="#contacto">Contacto</a>
 </nav>
-
-<div class="idiomas">
-<img src="esp.avif" loading="lazy" alt="Español" onclick="cambiarIdioma('es')">
-<img src="cat.avif" loading="lazy" alt="Catalán" onclick="cambiarIdioma('cat')">
-<img src="eng.avif" loading="lazy" alt="English" onclick="cambiarIdioma('en')">
-</div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
 <div class="hero-texto">
 <h1 class="marca">Multiservicios cc</h1>
-<h2 data-key="subtitulo">Fontanero urgente 24/7 en Granollers</h2>
+<h2>Fontanero urgente 24/7 en Granollers</h2>
 <p>Atendemos Granollers y pueblos cercanos como Montmeló, La Roca del Vallès, Canovelles y Mollet del Vallès.</p>
 </div>
 </section>
@@ -194,7 +118,7 @@ function cambiarIdioma(idioma){
 
 <!-- QUIÉN SOY -->
 <div class="titulos" id="quien">
-<h2 data-key="quien">¿Quién soy?</h2>
+<h2>¿Quién soy?</h2>
 </div>
 
 <section class="quien">
@@ -202,7 +126,7 @@ function cambiarIdioma(idioma){
 <img src="fontanero.avif" alt="Fontanero realizando reparación en Granollers y Montmeló">
 </div>
 <div class="contenido">
-<p data-key="descripcion">
+<p>
 Profesionales especializados en fontanería en Granollers y alrededores. Experiencia en reparaciones urgentes, instalaciones de tuberías y grifos, y solución de fugas de agua. Servicio rápido, confiable y de calidad.
 </p>
 </div>
@@ -213,7 +137,7 @@ Profesionales especializados en fontanería en Granollers y alrededores. Experie
 
 <!-- GALERÍA -->
 <div class="titulos" id="galeria">
-<h2 data-key="galeria">Galería de trabajos</h2>
+<h2>Galería de trabajos</h2>
 </div>
 
 <section class="galeria">
@@ -229,17 +153,17 @@ Profesionales especializados en fontanería en Granollers y alrededores. Experie
 
 <!-- CIUDADES -->
 <div class="titulos" id="zonas">
-<h2 data-key="ciudadestitle">¿En qué ciudades trabajamos?</h2>
+<h2>¿En qué ciudades trabajamos?</h2>
 </div>
 
 <section class="ciudades">
-<p class="ciudades-intro" data-key="textoZonas">
+<p class="ciudades-intro">
 Trabajamos en Granollers y municipios cercanos como Montmeló, La Roca del Vallès, Canovelles, Mollet del Vallès y Cardedeu. Contacta con nosotros para atención inmediata.
 </p>
 
 <div class="columnas">
 <div class="columna">
-<h3 class="ciudades-titulo" data-key="fontanero">Fontanero</h3>
+<h3>Fontanero</h3>
 <ul>
 <li><a href="fontanero-barcelona.html">Barcelona</a></li>
 <li><a href="fontanero-mataro.html">Mataró</a></li>
@@ -258,7 +182,7 @@ Trabajamos en Granollers y municipios cercanos como Montmeló, La Roca del Vall�
 
 <!-- CONTACTO -->
 <div class="titulos" id="contacto">
-<h2 data-key="contacto">Contacto</h2>
+<h2>Contacto</h2>
 </div>
 
 <section class="info">
@@ -266,12 +190,12 @@ Trabajamos en Granollers y municipios cercanos como Montmeló, La Roca del Vall�
 <img src="fontanero.avif" alt="Servicio técnico de fontanería urgente Granollers">
 </div>
 <div class="contenido">
-<p data-key="horario"><b>Horario:</b> 24 horas al día</p>
+<p><b>Horario:</b> 24 horas al día</p>
 <p>
-<b data-key="telefono">Teléfono / WhatsApp:</b>
+<b>Teléfono / WhatsApp:</b>
 <a class="telefono" href="tel:+34687503604">687 50 36 04</a>
 </p>
-<p data-key="ubicacion"><b>Ubicación:</b> Granollers, España</p>
+<p><b>Ubicación:</b> Granollers, España</p>
 </div>
 <div class="lado derecha">
 <img src="fontanero.avif" alt="Fontanero disponible en Granollers y alrededores">
@@ -281,9 +205,9 @@ Trabajamos en Granollers y municipios cercanos como Montmeló, La Roca del Vall�
 <!-- FOOTER -->
 <footer>
 © Multiservicios cc - 
-<a href="aviso-legal.html" style="color:#facc15;" data-key="aviso">Aviso Legal</a> |
-<a href="privacidad.html" style="color:#facc15;" data-key="privacidad">Política de Privacidad</a> |
-<a href="politica.html" style="color:#facc15;" data-key="politicaCookies">Política de Cookies</a>
+<a href="aviso-legal.html" style="color:#facc15;">Aviso Legal</a> |
+<a href="privacidad.html" style="color:#facc15;">Política de Privacidad</a> |
+<a href="politica.html" style="color:#facc15;">Política de Cookies</a>
 </footer>
 
 <!-- JSON-LD -->
