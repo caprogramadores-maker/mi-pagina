@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html> 
+<!DOCTYPE html> 
 <html lang="es">
 <head>
 
@@ -74,78 +74,6 @@
 
 <body>
 
-<script>
-const traducciones = {
-es:{
-quien:"¿Quién soy?",
-galeria:"Galería de trabajos",
-zonas:"Zonas",
-contacto:"Contacto",
-quiensoy:"¿Quién soy?",
-subtitulo:"Electricista urgente 24/7 en Terrassa",
-descripcion:"Somos profesionales especializados en electricidad en Terrassa, con amplia experiencia en reparaciones domésticas y urgencias. Ofrecemos servicio rápido y eficiente de electricista, priorizando la satisfacción del cliente.",
-horario:"Horario: 24 horas al día",
-ubicacion:"Ubicación: Terrassa, España",
-telefono:"Teléfono / WhatsApp:",
-aviso:"Aviso Legal",
-privacidad:"Política de Privacidad",
-politicaCookies:"Política de Cookies",
-ciudadestitle:"¿En qué ciudades trabajamos?",
-textoZonas:"Estas son las principales ciudades en las que trabajamos. Si estás en alguna de ellas o dentro de estas áreas, no dudes en llamarnos para que podamos ayudarte.",
-electricista:"Electricista",
-fontanero:"Fontanero"
-},
-
-cat:{
-quien:"Qui sóc?",
-galeria:"Galeria de treballs",
-zonas:"Zones",
-contacto:"Contacte",
-quiensoy:"Qui sóc?",
-subtitulo:"Electricista urgent 24/7 a Terrassa",
-descripcion:"Som professionals especialitzats en electricitat a Terrassa, amb experiència en reparacions domèstiques i urgències. Oferim servei ràpid i eficient d'electricista, prioritzant la satisfacció del client.",
-horario:"Horari: 24 hores al dia",
-ubicacion:"Ubicació: Terrassa, Espanya",
-telefono:"Telèfon / WhatsApp:",
-aviso:"Avís Legal",
-privacidad:"Política de Privacitat",
-politicaCookies:"Política de Cookies",
-ciudadestitle:"¿En quines ciutats treballem?",
-textoZonas:"Aquestes són les principals ciutats on treballem. Si ets en alguna d'elles o dins d'aquestes àrees, no dubtes en trucar-nos per a que puguem ajudar-te.",
-electricista:"Electricista",
-fontanero:"Lampista"
-},
-
-en:{
-quien:"Who am I?",
-galeria:"Work gallery",
-zonas:"Areas",
-contacto:"Contact",
-quiensoy:"Who am I?",
-subtitulo:"Urgent Electrician 24/7 in Terrassa",
-descripcion:"Professional electrician in Terrassa, specialized in urgent repairs, installations, and domestic services. Fast, efficient, and reliable service for any emergency.",
-horario:"Schedule: 24 hours a day",
-ubicacion:"Location: Terrassa, Spain",
-telefono:"Phone / WhatsApp:",
-aviso:"Legal Notice",
-privacidad:"Privacy Policy",
-politicaCookies:"Cookies Policy",
-ciudadestitle:"In which cities do we work?",
-textoZonas:"These are the main cities where we work. If you are in any of them or within these areas, do not hesitate to call us so we can help you.",
-electricista:"Electrician",
-fontanero:"Plumber"
-}
-};
-
-function cambiarIdioma(idioma){
-    document.documentElement.lang = idioma;
-    document.querySelectorAll("[data-key]").forEach(elemento=>{
-        const key = elemento.getAttribute("data-key");
-        elemento.textContent = traducciones[idioma][key];
-    });
-}
-</script>
-
 <!-- HEADER -->
 <header>
 <div class="logo">
@@ -153,24 +81,18 @@ function cambiarIdioma(idioma){
 </div>
 
 <nav>
-<a href="#quien" data-key="quien">¿Quién soy?</a>
-<a href="#galeria" data-key="galeria">Galería de trabajos</a>
-<a href="#zonas" data-key="zonas">Zonas</a>
-<a href="#contacto" data-key="contacto">Contacto</a>
+<a href="#quien">¿Quién soy?</a>
+<a href="#galeria">Galería de trabajos</a>
+<a href="#zonas">Zonas</a>
+<a href="#contacto">Contacto</a>
 </nav>
-
-<div class="idiomas">
-<img src="esp.avif" loading="lazy" alt="Español" onclick="cambiarIdioma('es')">
-<img src="cat.avif" loading="lazy" alt="Catalán" onclick="cambiarIdioma('cat')">
-<img src="eng.avif" loading="lazy" alt="English" onclick="cambiarIdioma('en')">
-</div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
 <div class="hero-texto">
 <h1 class="marca">Multiservicios cc</h1>
-<h2 data-key="subtitulo">Electricista urgente 24/7 en Terrassa</h2>
+<h2>Electricista urgente 24/7 en Terrassa</h2>
 </div>
 </section>
 
@@ -194,7 +116,7 @@ function cambiarIdioma(idioma){
 </section>
 
 <div class="titulos" id="quien">
-    <h2 data-key="quien">¿Quién soy?</h2>
+    <h2>¿Quién soy?</h2>
 </div>
 
 <section class="quien">
@@ -202,7 +124,7 @@ function cambiarIdioma(idioma){
         <img src="electricista.avif" alt="Electricista realizando reparación eléctrica en Terrassa">
     </div>
     <div class="contenido">
-        <p data-key="descripcion">
+        <p>
         Somos profesionales especializados en electricidad en Terrassa, con amplia experiencia en reparaciones domésticas, averías urgentes e instalaciones. Ofrecemos servicio rápido, eficiente y cuidadoso, priorizando siempre la calidad y la satisfacción del cliente.
         </p>
     </div>
@@ -212,7 +134,7 @@ function cambiarIdioma(idioma){
 </section>
 
 <div class="titulos" id="galeria">
-    <h2 data-key="galeria">Galería de trabajos</h2>
+    <h2>Galería de trabajos</h2>
 </div>
 
 <section class="galeria">
@@ -227,17 +149,17 @@ function cambiarIdioma(idioma){
 </section>
 
 <div class="titulos" id="zonas">
-    <h2 data-key="ciudadestitle">¿En qué ciudades trabajamos?</h2>
+    <h2>¿En qué ciudades trabajamos?</h2>
 </div>
 
 <section class="ciudades">
-    <p class="ciudades-intro" data-key="textoZonas">
+<p class="ciudades-intro">
         Estas son las principales ciudades en las que trabajamos. Si estás en alguna de ellas o dentro de estas áreas, no dudes en llamarnos para que podamos ayudarte.
     </p>
 
     <div class="columnas">
         <div class="columna">
-            <h3 class="ciudades-titulo" data-key="electricista">Electricista</h3>
+            <h3>Electricista</h3>
             <ul>
                 <li><a href="electricista-barcelona.html">Barcelona</a></li>
                 <li><a href="electricista-mataro.html">Mataró</a></li>
@@ -255,7 +177,7 @@ function cambiarIdioma(idioma){
 </section>
 
 <div class="titulos" id="contacto">
-    <h2 data-key="contacto">Contacto</h2>
+    <h2>Contacto</h2>
 </div>
 
 <section class="info">
@@ -263,12 +185,12 @@ function cambiarIdioma(idioma){
         <img src="electricista.avif" alt="Servicio técnico eléctrico urgente Terrassa">
     </div>
     <div class="contenido">
-        <p data-key="horario"><b>Horario:</b> 24 horas al día</p>
+        <p><b>Horario:</b> 24 horas al día</p>
         <p>
-            <b data-key="telefono">Teléfono / WhatsApp:</b>
+            <b>Teléfono / WhatsApp:</b>
             <a class="telefono" href="tel:+34687503604">687 50 36 04</a>
         </p>
-        <p data-key="ubicacion"><b>Ubicación:</b> Terrassa, España</p>
+        <p><b>Ubicación:</b> Terrassa, España</p>
     </div>
     <div class="lado derecha">
         <img src="electricista.avif" alt="Electricista disponible en Terrassa">
@@ -277,9 +199,9 @@ function cambiarIdioma(idioma){
 
 <footer>
     © Multiservicios cc - 
-    <a href="aviso-legal.html" style="color:#facc15;" data-key="aviso">Aviso Legal</a> |
-    <a href="privacidad.html" style="color:#facc15;" data-key="privacidad">Política de Privacidad</a> |
-    <a href="politica.html" style="color:#facc15;" data-key="politicaCookies">Política de Cookies</a>
+    <a href="aviso-legal.html" style="color:#facc15;">Aviso Legal</a> |
+    <a href="privacidad.html" style="color:#facc15;">Política de Privacidad</a> |
+    <a href="politica.html" style="color:#facc15;">Política de Cookies</a>
 </footer>
 
 <script type="application/ld+json">
