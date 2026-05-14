@@ -104,76 +104,6 @@
 
 <body>
 
-<script>
-const traducciones = {
-es:{
-quien:"¿Quién soy?",
-galeria:"Galería de trabajos",
-zonas:"Zonas",
-contacto:"Contacto",
-quiensoy:"¿Quién soy?",
-subtitulo:"Fontanero urgente 24/7 en Manresa",
-descripcion:"Profesionales en fontanería en Manresa y alrededores, expertos en tuberías, grifos, desagües y fugas de agua. Servicio rápido y confiable.",
-horario:"Horario: 24 horas al día",
-ubicacion:"Ubicación: Manresa y alrededores, España",
-telefono:"Teléfono / WhatsApp:",
-aviso:"Aviso Legal",
-privacidad:"Política de Privacidad",
-politicaCookies:"Política de Cookies",
-ciudadestitle:"¿En qué ciudades trabajamos?",
-textoZonas:"Trabajamos en Manresa y municipios cercanos como Sant Fruitós de Bages, Sallent, Cardona y Santpedor. Contacta con nosotros para asistencia inmediata.",
-electricista:"Electricista",
-fontanero:"Fontanero"
-},
-cat:{
-quien:"Qui sóc?",
-galeria:"Galeria de treballs",
-zonas:"Zones",
-contacto:"Contacte",
-quiensoy:"Qui sóc?",
-subtitulo:"Lampista urgent 24/7 a Manresa",
-descripcion:"Professionals en lampisteria a Manresa i rodalies, especialistes en canonades, aixetes, desguassos i fuites d'aigua. Servei ràpid i fiable.",
-horario:"Horari: 24 hores al dia",
-ubicacion:"Ubicació: Manresa i rodalies, Espanya",
-telefono:"Telèfon / WhatsApp:",
-aviso:"Avís Legal",
-privacidad:"Política de Privacitat",
-politicaCookies:"Política de Cookies",
-ciudadestitle:"¿En quines ciutats treballem?",
-textoZonas:"Treballem a Manresa i municipis propers com Sant Fruitós de Bages, Sallent, Cardona i Santpedor. Contacta amb nosaltres per assistència immediata.",
-electricista:"Electricista",
-fontanero:"Lampista"
-},
-en:{
-quien:"Who am I?",
-galeria:"Work gallery",
-zonas:"Areas",
-contacto:"Contact",
-quiensoy:"Who am I?",
-subtitulo:"Urgent Plumber 24/7 in Manresa",
-descripcion:"Professional plumber in Manresa and nearby areas, specialized in urgent pipe repairs, faucets, drains, and water leaks. Fast and reliable service.",
-horario:"Schedule: 24 hours a day",
-ubicacion:"Location: Manresa and nearby areas, Spain",
-telefono:"Phone / WhatsApp:",
-aviso:"Legal Notice",
-privacidad:"Privacy Policy",
-politicaCookies:"Cookies Policy",
-ciudadestitle:"In which cities do we work?",
-textoZonas:"We work in Manresa and surrounding municipalities such as Sant Fruitós de Bages, Sallent, Cardona, and Santpedor. Contact us for immediate assistance.",
-electricista:"Electrician",
-fontanero:"Plumber"
-}
-};
-
-function cambiarIdioma(idioma){
-    document.documentElement.lang = idioma;
-    document.querySelectorAll("[data-key]").forEach(elemento=>{
-        const key = elemento.getAttribute("data-key");
-        elemento.textContent = traducciones[idioma][key];
-    });
-}
-</script>
-
 <!-- HEADER -->
 <header>
 <div class="logo">
@@ -181,24 +111,19 @@ function cambiarIdioma(idioma){
 </div>
 
 <nav>
-<a href="#quien" data-key="quien">¿Quién soy?</a>
-<a href="#galeria" data-key="galeria">Galería de trabajos</a>
-<a href="#zonas" data-key="zonas">Zonas</a>
-<a href="#contacto" data-key="contacto">Contacto</a>
+<a href="#quien">¿Quién soy?</a>
+<a href="#galeria">Galería de trabajos</a>
+<a href="#zonas">Zonas</a>
+<a href="#contacto">Contacto</a>
 </nav>
 
-<div class="idiomas">
-<img src="esp.avif" loading="lazy" alt="Español" onclick="cambiarIdioma('es')">
-<img src="cat.avif" loading="lazy" alt="Catalán" onclick="cambiarIdioma('cat')">
-<img src="eng.avif" loading="lazy" alt="English" onclick="cambiarIdioma('en')">
-</div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
 <div class="hero-texto">
 <h1 class="marca">Multiservicios cc</h1>
-<h2 data-key="subtitulo">Fontanero urgente 24/7 en Manresa</h2>
+<h2>Fontanero urgente 24/7 en Manresa</h2>
 </div>
 </section>
 
@@ -219,7 +144,7 @@ function cambiarIdioma(idioma){
 
 <!-- QUIÉN SOY -->
 <div class="titulos" id="quien">
-<h2 data-key="quien">¿Quién soy?</h2>
+<h2>¿Quién soy?</h2>
 </div>
 
 <section class="quien">
@@ -227,7 +152,7 @@ function cambiarIdioma(idioma){
 <img src="fontanero.avif" alt="Fontanero realizando reparación en Manresa">
 </div>
 <div class="contenido">
-<p data-key="descripcion">
+<p>
 Profesionales en fontanería en Manresa y alrededores, expertos en averías urgentes, instalaciones de tuberías, grifos y desagües. Servicio rápido, eficiente y cuidadoso, priorizando la calidad y satisfacción del cliente.
 </p>
 </div>
@@ -238,7 +163,7 @@ Profesionales en fontanería en Manresa y alrededores, expertos en averías urge
 
 <!-- GALERÍA -->
 <div class="titulos" id="galeria">
-<h2 data-key="galeria">Galería de trabajos</h2>
+<h2>Galería de trabajos</h2>
 </div>
 <section class="galeria">
     <img src="mantenimiento-tuberias.avif" alt="Mantenimiento de tuberías en vivienda en Manresa">
@@ -253,15 +178,15 @@ Profesionales en fontanería en Manresa y alrededores, expertos en averías urge
 
 <!-- CIUDADES -->
 <div class="titulos" id="zonas">
-<h2 data-key="ciudadestitle">¿En qué ciudades trabajamos?</h2>
+<h2>¿En qué ciudades trabajamos?</h2>
 </div>
 
 <section class="ciudades">
-<p class="ciudades-intro" data-key="textoZonas"></p>
+<p class="ciudades-intro"></p>
 
 <div class="columnas">
 <div class="columna">
-<h3 class="ciudades-titulo" data-key="fontanero">Fontanero</h3>
+<h3 class="ciudades-titulo">Fontanero</h3>
 <ul>
 <li><a href="fontanero-barcelona.html">Barcelona</a></li>
 <li><a href="fontanero-mataro.html">Mataró</a></li>
@@ -280,7 +205,7 @@ Profesionales en fontanería en Manresa y alrededores, expertos en averías urge
 
 <!-- CONTACTO -->
 <div class="titulos" id="contacto">
-<h2 data-key="contacto">Contacto</h2>
+<h2>Contacto</h2>
 </div>
 
 <section class="info">
@@ -288,9 +213,9 @@ Profesionales en fontanería en Manresa y alrededores, expertos en averías urge
 <img src="fontanero.avif" alt="Servicio técnico de fontanería urgente Manresa">
 </div>
 <div class="contenido">
-<p data-key="horario"><b>Horario:</b> 24 horas al día</p>
-<p><b data-key="telefono">Teléfono / WhatsApp:</b> <a class="telefono" href="tel:+34687503604">687 50 36 04</a></p>
-<p data-key="ubicacion"><b>Ubicación:</b> Manresa y alrededores, España</p>
+<p><b>Horario:</b> 24 horas al día</p>
+<p><b>Teléfono / WhatsApp:</b> <a class="telefono" href="tel:+34687503604">687 50 36 04</a></p>
+<p><b>Ubicación:</b> Manresa y alrededores, España</p>
 </div>
 <div class="lado derecha">
 <img src="fontanero.avif" alt="Fontanero disponible en Manresa">
@@ -300,9 +225,9 @@ Profesionales en fontanería en Manresa y alrededores, expertos en averías urge
 <!-- FOOTER -->
 <footer>
 © Multiservicios cc - 
-<a href="aviso-legal.html" style="color:#facc15;" data-key="aviso">Aviso Legal</a> |
-<a href="privacidad.html" style="color:#facc15;" data-key="privacidad">Política de Privacidad</a> |
-<a href="politica.html" style="color:#facc15;" data-key="politicaCookies">Política de Cookies</a>
+<a href="aviso-legal.html" style="color:#facc15;">Aviso Legal</a> |
+<a href="privacidad.html" style="color:#facc15;">Política de Privacidad</a> |
+<a href="politica.html" style="color:#facc15;">Política de Cookies</a>
 </footer>
 
 <!-- BOTONES CONTACTO -->
