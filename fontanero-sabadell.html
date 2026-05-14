@@ -85,77 +85,6 @@
 
 <body>
 
-<script>
-const traducciones = {
-es:{
-quien:"¿Quién soy?",
-galeria:"Galería de trabajos",
-zonas:"Zonas",
-contacto:"Contacto",
-quiensoy:"¿Quién soy?",
-subtitulo:"Fontanero urgente 24/7 en Sabadell",
-descripcion:"Somos profesionales especializados en fontanería en Sabadell, con amplia experiencia en reparaciones domésticas, averías urgentes e instalaciones de tuberías, grifos y desagües. Ofrecemos servicio rápido, eficiente y cuidadoso, priorizando siempre la calidad y la satisfacción del cliente.",
-horario:"Horario: 24 horas al día",
-ubicacion:"Ubicación: Sabadell, España",
-telefono:"Teléfono / WhatsApp:",
-aviso:"Aviso Legal",
-privacidad:"Política de Privacidad",
-politicaCookies:"Política de Cookies",
-ciudadestitle:"¿En qué ciudades trabajamos?",
-textoZonas:"Estas son las principales ciudades en las que trabajamos. Si estás en alguna de ellas o dentro de estas áreas, no dudes en llamarnos para que podamos ayudarte.",
-electricista:"Electricista",
-fontanero:"Fontanero"
-},
-
-cat:{
-quien:"Qui sóc?",
-galeria:"Galeria de treballs",
-zonas:"Zones",
-contacto:"Contacte",
-quiensoy:"Qui sóc?",
-subtitulo:"Lampista urgent 24/7 a Sabadell",
-descripcion:"Som professionals especialitzats en fontaneria a Sabadell, amb àmplia experiència en reparacions domèstiques, avaries urgents i instal·lacions de canonades, aixetes i desguassos. Oferim servei ràpid, eficient i curós, prioritzant sempre la qualitat i la satisfacció del client.",
-horario:"Horari: 24 hores al dia",
-ubicacion:"Ubicació: Sabadell, Espanya",
-telefono:"Telèfon / WhatsApp:",
-aviso:"Avís Legal",
-privacidad:"Política de Privacitat",
-politicaCookies:"Política de Cookies",
-ciudadestitle:"¿En quines ciutats treballem?",
-textoZonas:"Aquestes són les principals ciutats on treballem. Si ets en alguna d'elles o dins d'aquestes àrees, no dubtes en trucar-nos per a que puguem ajudar-te.",
-electricista:"Electricista",
-fontanero:"Lampista"
-},
-
-en:{
-quien:"Who am I?",
-galeria:"Work gallery",
-zonas:"Areas",
-contacto:"Contact",
-quiensoy:"Who am I?",
-subtitulo:"Urgent Plumber 24/7 in Sabadell",
-descripcion:"We are professional plumbers in Sabadell, with extensive experience in home repairs, emergency plumbing, and the installation of pipes, faucets, and drains. We offer fast, efficient, and careful service, always prioritizing quality and customer satisfaction.",
-horario:"Schedule: 24 hours a day",
-ubicacion:"Location: Sabadell, Spain",
-telefono:"Phone / WhatsApp:",
-aviso:"Legal Notice",
-privacidad:"Privacy Policy",
-politicaCookies:"Cookies Policy",
-ciudadestitle:"In which cities do we work?",
-textoZonas:"These are the main cities where we work. If you are in any of them or within these areas, do not hesitate to call us so we can help you.",
-electricista:"Electrician",
-fontanero:"Plumber"
-}
-};
-
-function cambiarIdioma(idioma){
-    document.documentElement.lang = idioma;
-    document.querySelectorAll("[data-key]").forEach(elemento=>{
-        const key = elemento.getAttribute("data-key");
-        elemento.textContent = traducciones[idioma][key];
-    });
-}
-</script>
 
 <!-- HEADER -->
 <header>
@@ -164,24 +93,19 @@ function cambiarIdioma(idioma){
 </div>
 
 <nav>
-<a href="#quien" data-key="quien">¿Quién soy?</a>
-<a href="#galeria" data-key="galeria">Galería de trabajos</a>
-<a href="#zonas" data-key="zonas">Zonas</a>
-<a href="#contacto" data-key="contacto">Contacto</a>
+<a href="#quien">¿Quién soy?</a>
+<a href="#galeria">Galería de trabajos</a>
+<a href="#zonas">Zonas</a>
+<a href="#contacto">Contacto</a>
 </nav>
 
-<div class="idiomas">
-<img src="esp.avif" loading="lazy" alt="Español" onclick="cambiarIdioma('es')">
-<img src="cat.avif" loading="lazy" alt="Catalán" onclick="cambiarIdioma('cat')">
-<img src="eng.avif" loading="lazy" alt="English" onclick="cambiarIdioma('en')">
-</div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
 <div class="hero-texto">
 <h1 class="marca">Multiservicios cc</h1>
-<h2 data-key="subtitulo">Fontanero urgente 24/7 en Sabadell</h2>
+<h2>Fontanero urgente 24/7 en Sabadell</h2>
 </div>
 </section>
 
@@ -205,7 +129,7 @@ function cambiarIdioma(idioma){
 </section>
 
 <div class="titulos" id="quien">
-<h2 data-key="quien">¿Quién soy?</h2>
+<h2>¿Quién soy?</h2>
 </div>
 
 <section class="quien">
@@ -213,7 +137,7 @@ function cambiarIdioma(idioma){
 <img src="fontanero.avif" alt="Fontanero realizando reparación en Sabadell">
 </div>
 <div class="contenido">
-<p data-key="descripcion">
+<p>
 Somos profesionales especializados en fontanería en Sabadell, con amplia experiencia en reparaciones domésticas, averías urgentes e instalaciones de tuberías, grifos y desagües. Ofrecemos servicio rápido, eficiente y cuidadoso, priorizando siempre la calidad y la satisfacción del cliente.
 </p>
 </div>
@@ -223,7 +147,7 @@ Somos profesionales especializados en fontanería en Sabadell, con amplia experi
 </section>
 
 <div class="titulos" id="galeria">
-<h2 data-key="galeria">Galería de trabajos</h2>
+<h2>Galería de trabajos</h2>
 </div>
 
 <section class="galeria">
@@ -239,17 +163,17 @@ Somos profesionales especializados en fontanería en Sabadell, con amplia experi
 
 <!-- SECCION CIUDADES -->
 <div class="titulos" id="zonas">
-<h2 data-key="ciudadestitle">¿En qué ciudades trabajamos?</h2>
+<h2>¿En qué ciudades trabajamos?</h2>
 </div>
 
 <section class="ciudades">
-<p class="ciudades-intro" data-key="textoZonas">
+<p class="ciudades-intro">
 Estas son las principales ciudades en las que trabajamos. Si estás en alguna de ellas o dentro de estas áreas, no dudes en llamarnos para que podamos ayudarte.
 </p>
 
 <div class="columnas">
 <div class="columna">
-<h3 class="ciudades-titulo" data-key="fontanero">Fontanero</h3>
+<h3 class="ciudades-titulo">Fontanero</h3>
 <ul>
 <li><a href="fontanero-barcelona.html">Barcelona</a></li>
 <li><a href="fontanero-mataro.html">Mataró</a></li>
@@ -267,7 +191,7 @@ Estas son las principales ciudades en las que trabajamos. Si estás en alguna de
 </section>
 
 <div class="titulos" id="contacto">
-<h2 data-key="contacto">Contacto</h2>
+<h2>Contacto</h2>
 </div>
 
 <section class="info">
@@ -275,12 +199,12 @@ Estas son las principales ciudades en las que trabajamos. Si estás en alguna de
 <img src="fontanero.avif" alt="Servicio técnico de fontanería urgente Sabadell">
 </div>
 <div class="contenido">
-<p data-key="horario"><b>Horario:</b> 24 horas al día</p>
+<p><b>Horario:</b> 24 horas al día</p>
 <p>
-<b data-key="telefono">Teléfono / WhatsApp:</b>
+<b>Teléfono / WhatsApp:</b>
 <a class="telefono" href="tel:+34687503604">687 50 36 04</a>
 </p>
-<p data-key="ubicacion"><b>Ubicación:</b> Sabadell, España</p>
+<p><b>Ubicación:</b> Sabadell, España</p>
 </div>
 <div class="lado derecha">
 <img src="fontanero.avif" alt="Fontanero disponible en Sabadell">
@@ -289,9 +213,9 @@ Estas son las principales ciudades en las que trabajamos. Si estás en alguna de
 
 <footer>
 © Multiservicios cc - 
-<a href="aviso-legal.html" style="color:#facc15;" data-key="aviso">Aviso Legal</a> |
-<a href="privacidad.html" style="color:#facc15;" data-key="privacidad">Política de Privacidad</a> |
-<a href="politica.html" style="color:#facc15;" data-key="politicaCookies">Política de Cookies</a>
+<a href="aviso-legal.html" style="color:#facc15;">Aviso Legal</a> |
+<a href="privacidad.html" style="color:#facc15;">Política de Privacidad</a> |
+<a href="politica.html" style="color:#facc15;">Política de Cookies</a>
 </footer>
 
 <script type="application/ld+json">
