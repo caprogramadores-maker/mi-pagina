@@ -73,78 +73,6 @@
 
 <body>
 
-<script>
-const traducciones = {
-es:{
-quien:"¿Quién soy?",
-galeria:"Galería de trabajos",
-zonas:"Zonas",
-contacto:"Contacto",
-quiensoy:"¿Quién soy?",
-subtitulo:"Fontanero urgente 24/7 en Mataró",
-descripcion:"Profesionales de fontanería en Mataró con atención rápida y eficiente. Reparamos tuberías, grifos, desagües y fugas de agua con garantía y confianza.",
-horario:"Horario: 24 horas al día",
-ubicacion:"Ubicación: Mataró, España",
-telefono:"Teléfono / WhatsApp:",
-aviso:"Aviso Legal",
-privacidad:"Política de Privacidad",
-politicaCookies:"Política de Cookies",
-ciudadestitle:"¿En qué ciudades trabajamos?",
-textoZonas:"Trabajamos en Mataró y alrededores como Arenys de Mar, Premià de Mar, Vilassar de Mar y Sant Andreu de Llavaneres. Llámanos para atención inmediata.",
-electricista:"Electricista",
-fontanero:"Fontanero"
-},
-
-cat:{
-quien:"Qui sóc?",
-galeria:"Galeria de treballs",
-zonas:"Zones",
-contacto:"Contacte",
-quiensoy:"Qui sóc?",
-subtitulo:"Lampista urgent 24/7 a Mataró",
-descripcion:"Professionals en lampisteria a Mataró, amb servei ràpid i eficient. Reparem canonades, aixetes, desguassos i fuites d'aigua amb garantia.",
-horario:"Horari: 24 hores al dia",
-ubicacion:"Ubicació: Mataró, Espanya",
-telefono:"Telèfon / WhatsApp:",
-aviso:"Avís Legal",
-privacidad:"Política de Privacitat",
-politicaCookies:"Política de Cookies",
-ciudadestitle:"¿En quines ciutats treballem?",
-textoZonas:"Treballem a Mataró i voltants com Arenys de Mar, Premià de Mar, Vilassar de Mar i Sant Andreu de Llavaneres. Truca'ns per atenció immediata.",
-electricista:"Electricista",
-fontanero:"Lampista"
-},
-
-en:{
-quien:"Who am I?",
-galeria:"Work gallery",
-zonas:"Areas",
-contacto:"Contact",
-quiensoy:"Who am I?",
-subtitulo:"Urgent Plumber 24/7 in Mataró",
-descripcion:"Professional plumber in Mataró, providing fast, efficient, and reliable service. Repairs, installations, and maintenance for homes and businesses.",
-horario:"Schedule: 24 hours a day",
-ubicacion:"Location: Mataró, Spain",
-telefono:"Phone / WhatsApp:",
-aviso:"Legal Notice",
-privacidad:"Privacy Policy",
-politicaCookies:"Cookies Policy",
-ciudadestitle:"In which cities do we work?",
-textoZonas:"We serve Mataró and nearby towns like Arenys de Mar, Premià de Mar, Vilassar de Mar, and Sant Andreu de Llavaneres. Call us for immediate assistance.",
-electricista:"Electrician",
-fontanero:"Plumber"
-}
-};
-
-function cambiarIdioma(idioma){
-    document.documentElement.lang = idioma;
-    document.querySelectorAll("[data-key]").forEach(elemento=>{
-        const key = elemento.getAttribute("data-key");
-        elemento.textContent = traducciones[idioma][key];
-    });
-}
-</script>
-
 <!-- HEADER -->
 <header>
 <div class="logo">
@@ -152,24 +80,19 @@ function cambiarIdioma(idioma){
 </div>
 
 <nav>
-<a href="#quien" data-key="quien">¿Quién soy?</a>
-<a href="#galeria" data-key="galeria">Galería de trabajos</a>
-<a href="#zonas" data-key="zonas">Zonas</a>
-<a href="#contacto" data-key="contacto">Contacto</a>
+<a href="#quien">¿Quién soy?</a>
+<a href="#galeria">Galería de trabajos</a>
+<a href="#zonas">Zonas</a>
+<a href="#contacto">Contacto</a>
 </nav>
 
-<div class="idiomas">
-<img src="esp.avif" loading="lazy" alt="Español" onclick="cambiarIdioma('es')">
-<img src="cat.avif" loading="lazy" alt="Catalán" onclick="cambiarIdioma('cat')">
-<img src="eng.avif" loading="lazy" alt="English" onclick="cambiarIdioma('en')">
-</div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
 <div class="hero-texto">
 <h1 class="marca">Multiservicios cc</h1>
-<h2 data-key="subtitulo">Fontanero urgente 24/7 en Mataró</h2>
+<h2>Fontanero urgente 24/7 en Mataró</h2>
 </div>
 </section>
 
@@ -192,7 +115,7 @@ function cambiarIdioma(idioma){
 </section>
 
 <div class="titulos" id="quien">
-<h2 data-key="quien">¿Quién soy?</h2>
+<h2>¿Quién soy?</h2>
 </div>
 
 <section class="quien">
@@ -200,7 +123,7 @@ function cambiarIdioma(idioma){
 <img src="fontanero.avif" alt="Fontanero realizando reparación en Mataró">
 </div>
 <div class="contenido">
-<p data-key="descripcion">
+<p>
 Profesionales de fontanería en Mataró con amplia experiencia en reparaciones domésticas, urgencias y mantenimiento de tuberías, grifos y desagües. Servicio rápido, cuidadoso y confiable.
 </p>
 </div>
@@ -210,7 +133,7 @@ Profesionales de fontanería en Mataró con amplia experiencia en reparaciones d
 </section>
 
 <div class="titulos" id="galeria">
-<h2 data-key="galeria">Galería de trabajos</h2>
+<h2>Galería de trabajos</h2>
 </div>
 
 <section class="galeria">
@@ -226,17 +149,17 @@ Profesionales de fontanería en Mataró con amplia experiencia en reparaciones d
 
 <!-- SECCION CIUDADES -->
 <div class="titulos" id="zonas">
-<h2 data-key="ciudadestitle">¿En qué ciudades trabajamos?</h2>
+<h2>¿En qué ciudades trabajamos?</h2>
 </div>
 
 <section class="ciudades">
-<p class="ciudades-intro" data-key="textoZonas">
+<p class="ciudades-intro">
 Trabajamos en Mataró y alrededores como Arenys de Mar, Premià de Mar, Vilassar de Mar y Sant Andreu de Llavaneres. Llámanos para atención inmediata.
 </p>
 
 <div class="columnas">
 <div class="columna">
-<h3 class="ciudades-titulo" data-key="fontanero">Fontanero</h3>
+<h3 class="ciudades-titulo">Fontanero</h3>
 <ul>
 <li><a href="fontanero-barcelona.html">Barcelona</a></li>
 <li><a href="fontanero-mataro.html">Mataró</a></li>
@@ -254,7 +177,7 @@ Trabajamos en Mataró y alrededores como Arenys de Mar, Premià de Mar, Vilassar
 </section>
 
 <div class="titulos" id="contacto">
-<h2 data-key="contacto">Contacto</h2>
+<h2>Contacto</h2>
 </div>
 
 <section class="info">
@@ -262,12 +185,12 @@ Trabajamos en Mataró y alrededores como Arenys de Mar, Premià de Mar, Vilassar
 <img src="fontanero.avif" alt="Servicio técnico de fontanería urgente Mataró">
 </div>
 <div class="contenido">
-<p data-key="horario"><b>Horario:</b> 24 horas al día</p>
+<p><b>Horario:</b> 24 horas al día</p>
 <p>
-<b data-key="telefono">Teléfono / WhatsApp:</b>
+<b>Teléfono / WhatsApp:</b>
 <a class="telefono" href="tel:+34687503604">687 50 36 04</a>
 </p>
-<p data-key="ubicacion"><b>Ubicación:</b> Mataró, España</p>
+<p><b>Ubicación:</b> Mataró, España</p>
 </div>
 <div class="lado derecha">
 <img src="fontanero.avif" alt="Fontanero disponible en Mataró">
@@ -276,9 +199,9 @@ Trabajamos en Mataró y alrededores como Arenys de Mar, Premià de Mar, Vilassar
 
 <footer>
 © Multiservicios cc - 
-<a href="aviso-legal.html" style="color:#facc15;" data-key="aviso">Aviso Legal</a> |
-<a href="privacidad.html" style="color:#facc15;" data-key="privacidad">Política de Privacidad</a> |
-<a href="politica.html" style="color:#facc15;" data-key="politicaCookies">Política de Cookies</a>
+<a href="aviso-legal.html" style="color:#facc15;">Aviso Legal</a> |
+<a href="privacidad.html" style="color:#facc15;">Política de Privacidad</a> |
+<a href="politica.html" style="color:#facc15;">Política de Cookies</a>
 </footer>
 
 <script type="application/ld+json">
