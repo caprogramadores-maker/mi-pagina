@@ -1,6 +1,20 @@
 <!DOCTYPE html> 
 <html lang="es">
 <head>
+<!-- 1. CONFIGURACIÓN DEL MODO DE CONSENTIMIENTO DE GOOGLE (Obligatorio para Google Ads) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+// Por defecto, todo denegado antes de que el usuario elija
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied'
+});
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -8,6 +22,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KGF39WL4');</script>
 <!-- End Google Tag Manager --> 
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -46,6 +61,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="apple-touch-icon" href="logo.avif">
 <link rel="stylesheet" href="style.css">
 
+<!-- ESTILOS DEL BANNER DE COOKIES -->
+<style>
+#cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 10000;
+    font-family: sans-serif;
+    display: none; /* Se activa por JS si no hay consentimiento previa */
+}
+#cookie-banner p {
+    font-size: 14px;
+    color: #333333;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+#cookie-banner p a {
+    color: #3B82F6;
+    text-decoration: underline;
+}
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.cookie-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.cookie-btn.accept {
+    background-color: #3B82F6;
+    color: white;
+}
+.cookie-btn.accept:hover {
+    background-color: #2563EB;
+}
+.cookie-btn.deny {
+    background-color: #E5E7EB;
+    color: #374151;
+}
+.cookie-btn.deny:hover {
+    background-color: #D1D5DB;
+}
+@media (max-width: 480px) {
+    #cookie-banner { bottom: 80px; width: 95%; padding: 15px; } /* Ajuste para no tapar el boton flotante de llamar */
+    .cookie-buttons { flex-direction: column; }
+}
+</style>
+
 <!-- SEO LOCAL -->
 <script type="application/ld+json">
 {
@@ -83,13 +159,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <body>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KGF39WL4');</script>
-<!-- End Google Tag Manager --> 
+<!-- Nota: He eliminado el duplicado de GTM que tenías al principio del body ya que solo debe estar en el head o justo tras abrir el body, pero no repetido dos veces -->
+
 <header>
 <div class="logo">
 <img src="logo.avif" loading="lazy" alt="Logo Multiservicios cc fontanero y electricista en Barcelona">
@@ -113,35 +184,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- SEO -->
 <section class="seo-texto">
-
 <h1>Electricista y fontanero en Barcelona con servicio urgente 24 horas</h1>
-
 <p><strong>Multiservicios cc</strong> ofrece servicios profesionales de electricidad, fontanería y cerrajería en Barcelona y área metropolitana. Realizamos urgencias 24h, reparaciones rápidas e instalaciones en viviendas, negocios y comunidades con atención inmediata.</p>
 
 <h2>Electricista urgente en Barcelona</h2>
-
 <p>Servicio de electricista 24 horas en Barcelona para averías eléctricas, apagones, cortocircuitos, cuadros eléctricos, enchufes, iluminación y reformas eléctricas. Trabajamos en viviendas, locales comerciales y oficinas con intervención rápida.</p>
 
 <h2>Fontanero urgente en Barcelona</h2>
-
 <p>Reparamos fugas de agua, tuberías, termos eléctricos, grifos, bajantes y desatascos en Barcelona. Servicio rápido de fontanería urgente con disponibilidad continua todos los días del año.</p>
 
 <h2>Cerrajero 24h en Barcelona</h2>
-
 <p>Apertura de puertas, cambio de cerraduras, reparación de bombines y asistencia urgente en viviendas y negocios en toda Barcelona y alrededores.</p>
 
 <h2>Mantenimiento para hogares y comunidades</h2>
-
 <p>Realizamos mantenimiento preventivo y reparaciones generales de electricidad y fontanería para particulares, comunidades y negocios en Barcelona.</p>
 
 <h2>Zonas donde trabajamos</h2>
-
 <p>Ofrecemos servicio en Barcelona, Hospitalet de Llobregat, Badalona, Cornellà, Sant Adrià del Besòs, Sant Boi, El Prat y otras zonas cercanas del área metropolitana.</p>
 
 <h2>Atención inmediata 24/7</h2>
-
 <p>Disponibilidad total las 24 horas por teléfono y WhatsApp para urgencias eléctricas, fontanería y cerrajería en Barcelona.</p>
-
 </section>
 
 <div class="titulos" id="quien">
@@ -152,13 +214,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="lado izquierda">
         <img src="electricista.avif" alt="Electricista realizando reparación eléctrica en Barcelona">
     </div>
-
     <div class="contenido">
-        <p>
-        Somos profesionales especializados en electricidad y fontanería con experiencia en reparaciones urgentes, mantenimiento e instalaciones. Ofrecemos un servicio rápido, limpio y eficiente en Barcelona, priorizando siempre la calidad del trabajo y la satisfacción del cliente.
-        </p>
+        <p>Somos profesionales especializados en electricidad y fontanería con experiencia en reparaciones urgentes, mantenimiento e instalaciones. Ofrecemos un servicio rápido, limpio y eficiente en Barcelona, priorizando siempre la calidad del trabajo y la satisfacción del cliente.</p>
     </div>
-
     <div class="lado derecha">
         <img src="fontanero.avif" alt="Fontanero reparando tuberías de agua en vivienda de Barcelona">
     </div>
@@ -179,19 +237,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <img src="solucion-obras.avif" alt="Solución de avería tras obras en apartamento Barcelona">
 </section>
 
-<!-- NUEVA SECCION --> 
 <div class="titulos" id="zonas">
     <h2>¿En qué ciudades trabajamos?</h2>
 </div>
 
 <section class="ciudades">
-
-    <p class="ciudades-intro">
-        Estas son las principales ciudades donde ofrecemos servicio urgente de electricidad y fontanería. Si estás en alguna de estas zonas, puedes llamarnos o escribirnos por WhatsApp para atención rápida.
-    </p>
-
+    <p class="ciudades-intro">Estas son las principales ciudades donde ofrecemos servicio urgente de electricidad y fontanería. Si estás en alguna de estas zonas, puedes llamarnos o escribirnos por WhatsApp para atención rápida.</p>
     <div class="columnas">
-
         <div class="columna">
             <h3 class="ciudades-titulo">Electricista</h3>
             <ul>
@@ -207,7 +259,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li><a href="electricista-mollet.html">Mollet del Vallès</a></li>
             </ul>
         </div>
-
         <div class="columna">
             <h3 class="ciudades-titulo">Fontanero</h3>
             <ul>
@@ -223,27 +274,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li><a href="fontanero-mollet.html">Mollet del Vallès</a></li>
             </ul>
         </div>
-
     </div>
 </section>
 
-<!-- FAQ visible -->
 <section class="seo-texto">
-
 <h2>Preguntas frecuentes</h2>
-
 <h3>¿Tenéis servicio urgente 24 horas en Barcelona?</h3>
 <p>Sí, ofrecemos atención urgente de electricidad, fontanería y cerrajería las 24 horas en Barcelona y alrededores.</p>
-
 <h3>¿Cuánto tardáis en llegar?</h3>
 <p>Dependiendo de la zona y del tráfico, normalmente atendemos urgencias rápidamente dentro del área metropolitana de Barcelona.</p>
-
 <h3>¿Trabajáis en comunidades y negocios?</h3>
 <p>Sí, realizamos reparaciones y mantenimiento tanto en viviendas particulares como en locales comerciales y comunidades.</p>
-
 <h3>¿También hacéis instalaciones?</h3>
 <p>Sí, además de urgencias realizamos instalaciones eléctricas, cambios de cuadros eléctricos, termos, grifería y otros trabajos de fontanería.</p>
-
 </section>
 
 <div class="titulos" id="contacto">
@@ -254,29 +297,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="lado izquierda">
         <img src="electricista.avif" alt="Servicio técnico eléctrico urgente Barcelona">
     </div>
-
     <div class="contenido">
         <p><b>Horario:</b> 24 horas al día</p>
-
-        <p>
-            <b>Teléfono / WhatsApp:</b>
-            <a class="telefono" href="tel:+34687503604">687 50 36 04</a>
-        </p>
-
+        <p><b>Teléfono / WhatsApp:</b> <a class="telefono" href="tel:+34687503604">687 50 36 04</a></p>
         <p><b>Ubicación:</b> Barcelona y alrededores</p>
     </div>
-
     <div class="lado derecha">
         <img src="fontanero.avif" alt="Fontanero urgente disponible en Barcelona">
     </div>
 </section>
 
 <footer>
-    © Multiservicios cc -
-    <a href="aviso-legal.html" style="color:#facc15;">Aviso Legal</a> |
-    <a href="privacidad.html" style="color:#facc15;">Política de Privacidad</a> |
+    © Multiservicios cc - 
+    <a href="aviso-legal.html" style="color:#facc15;">Aviso Legal</a> | 
+    <a href="privacidad.html" style="color:#facc15;">Política de Privacidad</a> | 
     <a href="politica.html" style="color:#facc15;">Política de Cookies</a>
 </footer>
+
+<!-- ESTRUCTURA DEL BANNER DE COOKIES (Se muestra abajo si no hay decisión guardada) -->
+<div id="cookie-banner">
+    <p>Utilizamos cookies propias y de terceros para analizar nuestros servicios y mostrarle publicidad relacionada con sus preferencias mediante el análisis de sus hábitos de navegación (por ejemplo, páginas visitadas). Puede aceptar todas las cookies pulsando el botón "Aceptar" o configurarlas/rechazarlas en nuestro banner. Para más información consulte nuestra <a href="politica.html">Política de Cookies</a>.</p>
+    <div class="cookie-buttons">
+        <button class="cookie-btn deny" onclick="acceptCookies(false)">Rechazar</button>
+        <button class="cookie-btn accept" onclick="acceptCookies(true)">Aceptar todas</button>
+    </div>
+</div>
+
+<!-- LÓGICA DE CONTROL DE COOKIES Y CONSENT MODE V2 -->
+<script>
+function setConsent(accepted) {
+    var status = accepted ? 'granted' : 'denied';
+    gtag('consent', 'update', {
+        'ad_storage': status,
+        'ad_user_data': status,
+        'ad_personalization': status,
+        'analytics_storage': status
+    });
+}
+
+function acceptCookies(agreed) {
+    localStorage.setItem('cookieConsent', agreed ? 'accepted' : 'denied');
+    setConsent(agreed);
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+
+// Comprobar al cargar la página si el usuario ya decidió en el pasado
+document.addEventListener("DOMContentLoaded", function() {
+    var consent = localStorage.getItem('cookieConsent');
+    if (!consent) {
+        // Si no ha decidido, mostramos el banner
+        document.getElementById('cookie-banner').style.display = 'block';
+    } else if (consent === 'accepted') {
+        // Si ya aceptó en el pasado, actualizamos el estado de Google a permitido
+        setConsent(true);
+    }
+});
+</script>
 
 <script type="application/ld+json">
 {
@@ -310,11 +386,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   ],
   "serviceArea": {
     "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": 41.3874,
-      "longitude": 2.1686
-    },
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 41.3874, "longitude": 2.1686 },
     "geoRadius": 25000
   },
   "makesOffer": [
@@ -322,9 +394,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fontanero urgente"}},
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cerrajero urgente"}}
   ],
-  "sameAs": [
-    "https://wa.me/34687503604"
-  ]
+  "sameAs": [ "https://wa.me/34687503604" ]
 }
 </script>
 
@@ -336,34 +406,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "¿Ofrecen electricista urgente 24h en Barcelona?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, ofrecemos servicio urgente de electricista 24 horas en Barcelona y municipios cercanos."
-      }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, ofrecemos servicio urgente de electricista 24 horas en Barcelona y municipios cercanos." }
     },
     {
       "@type": "Question",
       "name": "¿Ofrecen fontanero urgente en Barcelona?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, realizamos reparaciones de fugas, desatascos, termos y averías de fontanería las 24 horas."
-      }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, realizamos reparaciones de fugas, desatascos, termos y averías de fontanería las 24 horas." }
     },
     {
       "@type": "Question",
       "name": "¿También hacen trabajos de cerrajería?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, ofrecemos apertura de puertas y cambio de cerraduras con atención urgente."
-      }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, ofrecemos apertura de puertas y cambio de cerraduras con atención urgente." }
     },
     {
       "@type": "Question",
       "name": "¿Trabajan en Hospitalet y Badalona?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, trabajamos en Barcelona y toda el área metropolitana incluyendo Hospitalet, Badalona y Cornellà."
-      }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, trabajamos en Barcelona y toda el área metropolitana incluyendo Hospitalet, Badalona y Cornellà." }
     }
   ]
 }
