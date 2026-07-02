@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- 1. CONFIGURACIÓN DEL MODO DE CONSENTIMIENTO DE GOOGLE (Obligatorio para Google Ads) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+// Por defecto, todo denegado antes de que el usuario elija
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied'
+});
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -43,6 +57,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="shortcut icon" href="logo.avif">
 <link rel="apple-touch-icon" href="logo.avif">
 <link rel="stylesheet" href="style.css">
+
+<!-- ESTILOS DEL BANNER DE COOKIES -->
+<style>
+#cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 10000;
+    font-family: sans-serif;
+    display: none; /* Controlado por JavaScript */
+}
+#cookie-banner p {
+    font-size: 14px;
+    color: #333333;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+#cookie-banner p a {
+    color: #3B82F6;
+    text-decoration: underline;
+}
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.cookie-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.cookie-btn.accept {
+    background-color: #3B82F6;
+    color: white;
+}
+.cookie-btn.accept:hover {
+    background-color: #2563EB;
+}
+.cookie-btn.deny {
+    background-color: #E5E7EB;
+    color: #374151;
+}
+.cookie-btn.deny:hover {
+    background-color: #D1D5DB;
+}
+@media (max-width: 480px) {
+    #cookie-banner { bottom: 80px; width: 95%; padding: 15px; } /* Evita pisar el botón flotante fijado abajo */
+    .cookie-buttons { flex-direction: column; }
+}
+</style>
 
 <!-- SEO LOCAL MEJORADO -->
 <script type="application/ld+json">
@@ -99,14 +174,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <body>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KGF39WL4');</script>
-<!-- End Google Tag Manager --> 
-<!-- HEADER (SIN CAMBIOS) -->
+
+<!-- HEADER -->
 <header>
 <div class="logo">
 <img src="logo.avif" loading="lazy" alt="Logo Multiservicios cc electricista en Barcelona">
@@ -118,7 +187,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <a href="#zonas">Zonas</a>
 <a href="#contacto">Contacto</a>
 </nav>
-
 </header>
 
 <!-- HERO -->
@@ -131,9 +199,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- SEO TEXT -->
 <section class="seo-texto">
-
 <h1>Electricista Urgente en Barcelona 24h</h1>
-
 <p><strong>Multiservicios cc</strong> ofrece servicio de electricista urgente en Barcelona con atención 24 horas para averías eléctricas, instalaciones y reparaciones en viviendas, locales y comunidades.</p>
 
 <h2>Electricista en Barcelona ciudad</h2>
@@ -147,10 +213,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h2>Zonas de cobertura</h2>
 <p>Barcelona, Hospitalet de Llobregat, Badalona, Cornellà, Santa Coloma, Sant Adrià del Besòs, Esplugues y alrededores.</p>
-
 </section>
 
-<!-- RESTO DEL CODIGO SIN CAMBIOS -->
 <!-- QUIÉN SOY -->
 <div class="titulos" id="quien">
     <h2>¿Quién soy?</h2>
@@ -161,9 +225,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <img src="electricista.avif" alt="Electricista realizando reparación eléctrica en Barcelona">
     </div>
     <div class="contenido">
-        <p>
-        Somos profesionales especializados en electricidad en Barcelona, con amplia experiencia en reparaciones domésticas, averías urgentes e instalaciones. Atendemos urgentemente en toda la ciudad y municipios cercanos, priorizando la calidad y satisfacción del cliente.
-        </p>
+        <p>Somos profesionales especializados en electricidad en Barcelona, con amplia experiencia en reparaciones domésticas, averías urgentes e instalaciones. Atendemos urgentemente en toda la ciudad y municipios cercanos, priorizando la calidad y satisfacción del cliente.</p>
     </div>
     <div class="lado derecha">
         <img src="fontanero.avif" alt="Asistencia de fontanero disponible en Barcelona">
@@ -192,30 +254,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 
 <section class="ciudades">
-<p>
-Estas son las principales ciudades donde ofrecemos servicio de electricista urgente 24h en Barcelona y alrededores.
-</p>
-
-<div class="columnas">
-<div class="columna">
-<h3 class="ciudades-titulo">Electricista</h3>
-<ul>
-<li><a href="electricista-barcelona.html">Barcelona</a></li>
-<li><a href="electricista-mataro.html">Mataró</a></li>
-<li><a href="electricista-sitges.html">Sitges</a></li>
-<li><a href="electricista-manresa.html">Manresa</a></li>
-<li><a href="electricista-sabadell.html">Sabadell</a></li>
-<li><a href="electricista-terrassa.html">Terrassa</a></li>
-<li><a href="electricista-granollers.html">Granollers</a></li>
-<li><a href="electricista-vilafranca-del-penedes.html">Vilafranca del Penedès</a></li>
-<li><a href="electricista-sant-cugat.html">Sant Cugat</a></li>
-<li><a href="electricista-mollet.html">Mollet del Vallès</a></li>
-</ul>
-</div>
-</div>
-</section>
-</div>
-</div>
+    <p>Estas son las principales ciudades donde ofrecemos servicio de electricista urgente 24h en Barcelona y alrededores.</p>
+    <div class="columnas">
+        <div class="columna">
+            <h3 class="ciudades-titulo">Electricista</h3>
+            <ul>
+                <li><a href="electricista-barcelona.html">Barcelona</a></li>
+                <li><a href="electricista-mataro.html">Mataró</a></li>
+                <li><a href="electricista-sitges.html">Sitges</a></li>
+                <li><a href="electricista-manresa.html">Manresa</a></li>
+                <li><a href="electricista-sabadell.html">Sabadell</a></li>
+                <li><a href="electricista-terrassa.html">Terrassa</a></li>
+                <li><a href="electricista-granollers.html">Granollers</a></li>
+                <li><a href="electricista-vilafranca-del-penedes.html">Vilafranca del Penedès</a></li>
+                <li><a href="electricista-sant-cugat.html">Sant Cugat</a></li>
+                <li><a href="electricista-mollet.html">Mollet del Vallès</a></li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 <!-- CONTACTO -->
@@ -229,10 +285,7 @@ Estas son las principales ciudades donde ofrecemos servicio de electricista urge
     </div>
     <div class="contenido">
         <p><b>Horario:</b> 24 horas al día</p>
-        <p>
-            <b>Teléfono / WhatsApp:</b>
-            <a class="telefono" href="tel:+34687503604">687 50 36 04</a>
-        </p>
+        <p><b>Teléfono / WhatsApp:</b> <a class="telefono" href="tel:+34687503604">687 50 36 04</a></p>
         <p><b>Ubicación:</b> Barcelona, España</p>
     </div>
     <div class="lado derecha">
@@ -242,11 +295,48 @@ Estas son las principales ciudades donde ofrecemos servicio de electricista urge
 
 <!-- FOOTER -->
 <footer>
-© Multiservicios cc - Aviso Legal | Política de Privacidad | Política de Cookies
+© Multiservicios cc - <a href="aviso-legal.html" style="color:#facc15;">Aviso Legal</a> | <a href="privacidad.html" style="color:#facc15;">Política de Privacidad</a> | <a href="politica.html" style="color:#facc15;">Política de Cookies</a>
 </footer>
 
-<!-- BOTÓN WHATSAPP -->
-<a href="https://wa.me/34687503604" class="whatsapp" target="_blank">
+<!-- ESTRUCTURA DEL BANNER DE COOKIES -->
+<div id="cookie-banner">
+    <p>Utilizamos cookies propias y de terceros para analizar nuestros servicios y mostrarle publicidad relacionada con sus preferencias mediante el análisis de sus hábitos de navegación (por ejemplo, páginas visitadas). Puede aceptar todas las cookies pulsando el botón "Aceptar" o configurarlas/rechazarlas en nuestro banner. Para más información consulte nuestra <a href="politica.html">Política de Cookies</a>.</p>
+    <div class="cookie-buttons">
+        <button class="cookie-btn deny" onclick="acceptCookies(false)">Rechazar</button>
+        <button class="cookie-btn accept" onclick="acceptCookies(true)">Aceptar todas</button>
+    </div>
+</div>
+
+<!-- LÓGICA DE CONTROL DE COOKIES Y CONSENT MODE V2 -->
+<script>
+function setConsent(accepted) {
+    var status = accepted ? 'granted' : 'denied';
+    gtag('consent', 'update', {
+        'ad_storage': status,
+        'ad_user_data': status,
+        'ad_personalization': status,
+        'analytics_storage': status
+    });
+}
+
+function acceptCookies(agreed) {
+    localStorage.setItem('cookieConsent', agreed ? 'accepted' : 'denied');
+    setConsent(agreed);
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var consent = localStorage.getItem('cookieConsent');
+    if (!consent) {
+        document.getElementById('cookie-banner').style.display = 'block';
+    } else if (consent === 'accepted') {
+        setConsent(true);
+    }
+});
+</script>
+
+<!-- BOTÓN WHATSAPP Y LLAMADAS -->
+<a href="https://wa.me/34687503604" class="whatsapp" target="_blank" aria-label="Contactar por WhatsApp">
 <img src="Digital_Glyph_Green.svg" alt="WhatsApp electricista Barcelona">
 </a>
 
