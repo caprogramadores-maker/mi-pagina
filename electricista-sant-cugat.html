@@ -1,13 +1,24 @@
 <!DOCTYPE html> 
 <html lang="es">
 <head>
-<!-- Google Tag Manager -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+// Por defecto, todo denegado antes de recibir el consentimiento del usuario
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied'
+});
+</script>
+
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KGF39WL4');</script>
-<!-- End Google Tag Manager --> 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -28,7 +39,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="alternate" hreflang="cat" href="electricista-sant-cugat.html" />
 <link rel="alternate" hreflang="en" href="electricista-sant-cugat.html" />
 
-<!-- Open Graph -->
 <meta property="og:title" content="Electricista Sant Cugat del Vallès 24h | Reparaciones urgentes">
 <meta property="og:description" content="Servicio urgente de electricista en Sant Cugat del Vallès. Respuesta rápida 24/7 para averías domésticas y profesionales.">
 <meta property="og:type" content="website">
@@ -45,7 +55,66 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="apple-touch-icon" href="logo.avif">
 <link rel="stylesheet" href="style.css">
 
-<!-- SEO LOCAL -->
+<style>
+#cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 10000;
+    font-family: sans-serif;
+    display: none; /* Controlado dinámicamente por JavaScript */
+}
+#cookie-banner p {
+    font-size: 14px;
+    color: #333333;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+#cookie-banner p a {
+    color: #3B82F6;
+    text-decoration: underline;
+}
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.cookie-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.cookie-btn.accept {
+    background-color: #3B82F6;
+    color: white;
+}
+.cookie-btn.accept:hover {
+    background-color: #2563EB;
+}
+.cookie-btn.deny {
+    background-color: #E5E7EB;
+    color: #374151;
+}
+.cookie-btn.deny:hover {
+    background-color: #D1D5DB;
+}
+@media (max-width: 480px) {
+    #cookie-banner { bottom: 80px; width: 95%; padding: 15px; } /* Deja espacio libre para el botón de llamada en móviles */
+    .cookie-buttons { flex-direction: column; }
+}
+</style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -79,14 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <body>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KGF39WL4');</script>
-<!-- End Google Tag Manager --> 
-<!-- HEADER -->
+
 <header>
 <div class="logo">
 <img src="logo.avif" loading="lazy" alt="Logo Multiservicios cc electricista en Sant Cugat del Vallès">
@@ -98,10 +160,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <a href="#zonas">Zonas</a>
 <a href="#contacto">Contacto</a>
 </nav>
-
 </header>
 
-<!-- HERO -->
 <section class="hero">
 <div class="hero-texto">
 <h1 class="marca">Multiservicios cc</h1>
@@ -109,10 +169,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </section>
 
-<!-- CONTENIDO SEO PRINCIPAL -->
 <section class="seo-texto">
 <h1>Electricista Urgente en Sant Cugat del Vallès 24h</h1>
-
 <p><strong>Multiservicios cc</strong> es tu opción #1 en Sant Cugat del Vallès para <em>electricista urgente</em>. Atendemos en la ciudad y municipios cercanos del Vallès Occidental, con servicio 24/7.</p>
 
 <h2>Servicio profesional de Electricista en Sant Cugat del Vallès</h2>
@@ -137,9 +195,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <img src="electricista.avif" alt="Electricista realizando reparación eléctrica en Sant Cugat del Vallès">
     </div>
     <div class="contenido">
-        <p>
-        Somos profesionales especializados en electricidad en Sant Cugat del Vallès, con amplia experiencia en reparaciones domésticas, averías urgentes e instalaciones. Ofrecemos servicio rápido, eficiente y cuidadoso, priorizando siempre la calidad y la satisfacción del cliente.
-        </p>
+        <p>Somos profesionales especializados en electricidad en Sant Cugat del Vallès, con amplia experiencia en reparaciones domésticas, averías urgentes e instalaciones. Ofrecemos servicio rápido, eficiente y cuidadoso, priorizando siempre la calidad y la satisfacción del cliente.</p>
     </div>
     <div class="lado derecha">
         <img src="fontanero.avif" alt="Asistencia de fontanero disponible en Sant Cugat del Vallès">
@@ -166,10 +222,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 
 <section class="ciudades">
-    <p class="ciudades-intro">
-        Estas son las principales ciudades en las que trabajamos. Si estás en alguna de ellas o dentro de estas áreas, no dudes en llamarnos para que podamos ayudarte.
-    </p>
-
+    <p class="ciudades-intro">Estas son las principales ciudades en las que trabajamos. Si estás en alguna de ellas o dentro de estas áreas, no dudes en llamarnos para que podamos ayudarte.</p>
     <div class="columnas">
         <div class="columna">
             <h3 class="ciudades-titulo">Electricista</h3>
@@ -199,10 +252,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     <div class="contenido">
         <p><b>Horario:</b> 24 horas al día</p>
-        <p>
-            <b>Teléfono / WhatsApp:</b>
-            <a class="telefono" href="tel:+34687503604">687 50 36 04</a>
-        </p>
+        <p><b>Teléfono / WhatsApp:</b> <a class="telefono" href="tel:+34687503604">687 50 36 04</a></p>
         <p><b>Ubicación:</b> Sant Cugat del Vallès, España</p>
     </div>
     <div class="lado derecha">
@@ -216,6 +266,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <a href="privacidad.html" style="color:#facc15;">Política de Privacidad</a> |
     <a href="politica.html" style="color:#facc15;">Política de Cookies</a>
 </footer>
+
+<div id="cookie-banner">
+    <p>Utilizamos cookies propias y de terceros para analizar nuestros servicios y mostrarle publicidad relacionada con sus preferencias mediante el análisis de sus hábitos de navegación (por ejemplo, páginas visitadas). Puede aceptar todas las cookies pulsando el botón "Aceptar" o configurarlas/rechazarlas en nuestro banner. Para más información consulte nuestra <a href="politica.html">Política de Cookies</a>.</p>
+    <div class="cookie-buttons">
+        <button class="cookie-btn deny" onclick="acceptCookies(false)">Rechazar</button>
+        <button class="cookie-btn accept" onclick="acceptCookies(true)">Aceptar todas</button>
+    </div>
+</div>
+
+<script>
+function setConsent(accepted) {
+    var status = accepted ? 'granted' : 'denied';
+    gtag('consent', 'update', {
+        'ad_storage': status,
+        'ad_user_data': status,
+        'ad_personalization': status,
+        'analytics_storage': status
+    });
+}
+
+// Guarda la decisión del usuario en el navegador y cierra el banner
+function acceptCookies(agreed) {
+    localStorage.setItem('cookieConsent', agreed ? 'accepted' : 'denied');
+    setConsent(agreed);
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var consent = localStorage.getItem('cookieConsent');
+    if (!consent) {
+        document.getElementById('cookie-banner').style.display = 'block';
+    } else if (consent === 'accepted') {
+        setConsent(true);
+    }
+});
+</script>
 
 <script type="application/ld+json">
 {
@@ -248,11 +334,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   ],
   "serviceArea": {
     "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": 41.4671,
-      "longitude": 2.0819
-    },
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 41.4671, "longitude": 2.0819 },
     "geoRadius": 25000
   },
   "makesOffer": [
