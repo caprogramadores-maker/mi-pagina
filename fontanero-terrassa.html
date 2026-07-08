@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- 1. CONFIGURACIÓN DEL MODO DE CONSENTIMIENTO DE GOOGLE (Google Consent Mode v2) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+// Configuración predeterminada: Todo denegado de forma nativa
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied'
+});
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -45,7 +59,68 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="apple-touch-icon" href="logo.avif">
 <link rel="stylesheet" href="style.css">
 
-<!-- SEO LOCAL -->
+<!-- ESTILOS DEL BANNER DE COOKIES -->
+<style>
+#cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 10000;
+    font-family: sans-serif;
+    display: none;
+}
+#cookie-banner p {
+    font-size: 14px;
+    color: #333333;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+#cookie-banner p a {
+    color: #3B82F6;
+    text-decoration: underline;
+}
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.cookie-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.cookie-btn.accept {
+    background-color: #3B82F6;
+    color: white;
+}
+.cookie-btn.accept:hover {
+    background-color: #2563EB;
+}
+.cookie-btn.deny {
+    background-color: #E5E7EB;
+    color: #374151;
+}
+.cookie-btn.deny:hover {
+    background-color: #D1D5DB;
+}
+@media (max-width: 480px) {
+    #cookie-banner { bottom: 80px; width: 95%; padding: 15px; }
+    .cookie-buttons { flex-direction: column; }
+}
+</style>
+
+<!-- SEO LOCAL (Primer Bloque original) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -77,28 +152,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 
 </head>
-
 <body>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KGF39WL4');</script>
-<!-- End Google Tag Manager --> 
+
 <!-- HEADER -->
 <header>
 <div class="logo">
 <img src="logo.avif" loading="lazy" alt="Logo Multiservicios cc fontanero en Terrassa">
 </div>
-
 <nav>
 <a href="#quien">¿Quién soy?</a>
 <a href="#galeria">Galería de trabajos</a>
 <a href="#zonas">Zonas</a>
 <a href="#contacto">Contacto</a>
 </nav>
-
 </header>
 
 <!-- HERO -->
@@ -112,7 +178,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- CONTENIDO SEO PRINCIPAL -->
 <section class="seo-texto">
 <h1>Fontanero Urgente en Terrassa 24h</h1>
-
 <p><strong>Multiservicios cc</strong> es tu opción #1 en Terrassa para <em>fontanero urgente</em>. Atendemos en Terrassa ciudad y municipios cercanos del área metropolitana, con servicio 24/7.</p>
 
 <h2>Servicio profesional de Fontanero en Terrassa</h2>
@@ -128,6 +193,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Terrassa, Sabadell, Sant Cugat, Rubí, Castellar del Vallès, Cerdanyola del Vallès y municipios cercanos.</p>
 </section>
 
+<!-- QUIÉN SOY -->
 <div class="titulos" id="quien">
 <h2>¿Quién soy?</h2>
 </div>
@@ -137,15 +203,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <img src="fontanero.avif" alt="Fontanero realizando reparación en Terrassa">
 </div>
 <div class="contenido">
-<p>
-Somos profesionales especializados en fontanería en Terrassa, con amplia experiencia en reparaciones domésticas, averías urgentes e instalaciones de tuberías, grifos y desagües. Ofrecemos servicio rápido, eficiente y cuidadoso, priorizando siempre la calidad y la satisfacción del cliente.
-</p>
+<p>Somos profesionales especializados en fontanería en Terrassa, con amplia experiencia en reparaciones domésticas, averías urgentes e instalaciones de tuberías, grifos y desagües. Ofrecemos servicio rápido, eficiente y cuidadoso, priorizando siempre la calidad y la satisfacción del cliente.</p>
 </div>
 <div class="lado derecha">
 <img src="fontanero.avif" alt="Asistencia de fontanero disponible en Terrassa">
 </div>
 </section>
 
+<!-- GALERÍA -->
 <div class="titulos" id="galeria">
 <h2>Galería de trabajos</h2>
 </div>
@@ -167,29 +232,27 @@ Somos profesionales especializados en fontanería en Terrassa, con amplia experi
 </div>
 
 <section class="ciudades">
-<p class="ciudades-intro">
-Estas son las principales ciudades en las que trabajamos. Si estás en alguna de ellas o dentro de estas áreas, no dudes en llamarnos para que podamos ayudarte.
-</p>
-
+<p class="ciudades-intro">Estas son las principales ciudades en las que trabajamos. Si estás en alguna de ellas o dentro de estas áreas, no dudes en llamarnos para que podamos ayudarte.</p>
 <div class="columnas">
 <div class="columna">
 <h3 class="ciudades-titulo">Fontanero</h3>
 <ul>
-<li><a href="fontanero-barcelona.html">Barcelona</a></li>
-<li><a href="fontanero-mataro.html">Mataró</a></li>
-<li><a href="fontanero-sitges.html">Sitges</a></li>
-<li><a href="fontanero-manresa.html">Manresa</a></li>
-<li><a href="fontanero-sabadell.html">Sabadell</a></li>
-<li><a href="fontanero-terrassa.html">Terrassa</a></li>
-<li><a href="fontanero-granollers.html">Granollers</a></li>
-<li><a href="fontanero-vilafranca-del-penedes.html">Vilafranca del Penedès</a></li>
-<li><a href="fontanero-sant-cugat.html">Sant Cugat</a></li>
-<li><a href="fontanero-mollet.html">Mollet del Vallès</a></li>
+<li><a href="fontanero-barcelona.html" title="Fontanero urgente en Barcelona">Barcelona</a></li>
+<li><a href="fontanero-mataro.html" title="Fontanero urgente en Mataró">Mataró</a></li>
+<li><a href="fontanero-sitges.html" title="Fontanero urgente en Sitges">Sitges</a></li>
+<li><a href="fontanero-manresa.html" title="Fontanero urgente en Manresa">Manresa</a></li>
+<li><a href="fontanero-sabadell.html" title="Fontanero urgente en Sabadell">Sabadell</a></li>
+<li><a href="fontanero-terrassa.html" title="Fontanero urgente en Terrassa">Terrassa</a></li>
+<li><a href="fontanero-granollers.html" title="Fontanero urgente en Granollers">Granollers</a></li>
+<li><a href="fontanero-vilafranca-del-penedes.html" title="Fontanero urgente en Vilafranca del Penedès">Vilafranca del Penedès</a></li>
+<li><a href="fontanero-sant-cugat.html" title="Fontanero urgente en Sant Cugat">Sant Cugat</a></li>
+<li><a href="fontanero-mollet.html" title="Fontanero urgente en Mollet del Vallès">Mollet del Vallès</a></li>
 </ul>
 </div>
 </div>
 </section>
 
+<!-- CONTACTO -->
 <div class="titulos" id="contacto">
 <h2>Contacto</h2>
 </div>
@@ -200,10 +263,7 @@ Estas son las principales ciudades en las que trabajamos. Si estás en alguna de
 </div>
 <div class="contenido">
 <p><b>Horario:</b> 24 horas al día</p>
-<p>
-<b>Teléfono / WhatsApp:</b>
-<a class="telefono" href="tel:+34687503604">687 50 36 04</a>
-</p>
+<p><b>Teléfono / WhatsApp:</b> <a class="telefono" href="tel:+34687503604">687 50 36 04</a></p>
 <p><b>Ubicación:</b> Terrassa, España</p>
 </div>
 <div class="lado derecha">
@@ -211,6 +271,7 @@ Estas son las principales ciudades en las que trabajamos. Si estás en alguna de
 </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
 © Multiservicios cc - 
 <a href="aviso-legal.html" style="color:#facc15;">Aviso Legal</a> |
@@ -218,6 +279,44 @@ Estas son las principales ciudades en las que trabajamos. Si estás en alguna de
 <a href="politica.html" style="color:#facc15;">Política de Cookies</a>
 </footer>
 
+<!-- ESTRUCTURA DEL BANNER DE COOKIES -->
+<div id="cookie-banner">
+    <p>Utilizamos cookies propias y de terceros para analizar nuestros servicios y mostrarle publicidad relacionada con sus preferencias mediante el análisis de sus hábitos de navegación (por ejemplo, páginas visitadas). Puede aceptar todas las cookies pulsando el botón "Aceptar" o configurarlas/rechazarlas en nuestro banner. Para más información consulte nuestra <a href="politica.html">Política de Cookies</a>.</p>
+    <div class="cookie-buttons">
+        <button class="cookie-btn deny" onclick="acceptCookies(false)">Rechazar</button>
+        <button class="cookie-btn accept" onclick="acceptCookies(true)">Aceptar todas</button>
+    </div>
+</div>
+
+<!-- LÓGICA DE CONTROL DE COOKIES Y CONSENT MODE V2 -->
+<script>
+function setConsent(accepted) {
+    var status = accepted ? 'granted' : 'denied';
+    gtag('consent', 'update', {
+        'ad_storage': status,
+        'ad_user_data': status,
+        'ad_personalization': status,
+        'analytics_storage': status
+    });
+}
+
+function acceptCookies(agreed) {
+    localStorage.setItem('cookieConsent', agreed ? 'accepted' : 'denied');
+    setConsent(agreed);
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var consent = localStorage.getItem('cookieConsent');
+    if (!consent) {
+        document.getElementById('cookie-banner').style.display = 'block';
+    } else if (consent === 'accepted') {
+        setConsent(true);
+    }
+});
+</script>
+
+<!-- SCHEMAS JSON-LD CORREGIDOS Y COMPLETADOS -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -274,16 +373,23 @@ Estas son las principales ciudades en las que trabajamos. Si estás en alguna de
       "@type": "Question",
       "name": "¿Ofrecen fontanero urgente 24h en Terrassa?",
       "acceptedAnswer": {"@type": "Answer", "text": "Sí, servicio ininterrumpido de fontanero 24h en Terrassa y municipios cercanos."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda en llegar el fontanero en Terrassa?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Acudimos rápidamente a cualquier zona de Terrassa en un plazo estimado de 30 a 60 minutos en casos urgentes."}
     }
   ]
 }
 </script>
 
+<!-- BOTONES CONTACTO -->
 <a href="https://wa.me/34687503604" class="whatsapp" target="_blank" aria-label="Contactar por WhatsApp">
 <img src="Digital_Glyph_Green.svg" alt="Contactar fontanero por WhatsApp en Terrassa">
 </a>
 <a href="tel:+34687503604" class="llamar-fijo">
 📞 Llamar ahora 24h
 </a>
+
 </body>
 </html>
