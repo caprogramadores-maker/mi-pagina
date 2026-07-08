@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- 1. CONFIGURACIÓN DEL MODO DE CONSENTIMIENTO DE GOOGLE (Obligatorio para Google Ads) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+// Por defecto, todo denegado antes de recibir el consentimiento del usuario
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied'
+});
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -45,6 +59,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="apple-touch-icon" href="logo.avif">
 <link rel="stylesheet" href="style.css">
 
+<!-- ESTILOS DEL BANNER DE COOKIES -->
+<style>
+#cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 10000;
+    font-family: sans-serif;
+    display: none; /* Controlado por JS */
+}
+#cookie-banner p {
+    font-size: 14px;
+    color: #333333;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+#cookie-banner p a {
+    color: #3B82F6;
+    text-decoration: underline;
+}
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.cookie-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.cookie-btn.accept {
+    background-color: #3B82F6;
+    color: white;
+}
+.cookie-btn.accept:hover {
+    background-color: #2563EB;
+}
+.cookie-btn.deny {
+    background-color: #E5E7EB;
+    color: #374151;
+}
+.cookie-btn.deny:hover {
+    background-color: #D1D5DB;
+}
+@media (max-width: 480px) {
+    #cookie-banner { bottom: 80px; width: 95%; padding: 15px; } /* Deja libre el botón de llamada inferior */
+    .cookie-buttons { flex-direction: column; }
+}
+</style>
+
 <!-- SEO LOCAL -->
 <script type="application/ld+json">
 {
@@ -78,26 +153,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <body>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KGF39WL4');</script>
-<!-- End Google Tag Manager --> 
+
 <!-- HEADER -->
 <header>
 <div class="logo">
 <img src="logo.avif" loading="lazy" alt="Logo Multiservicios cc fontanero en Mataró">
 </div>
-
 <nav>
 <a href="#quien">¿Quién soy?</a>
 <a href="#galeria">Galería de trabajos</a>
 <a href="#zonas">Zonas</a>
 <a href="#contacto">Contacto</a>
 </nav>
-
 </header>
 
 <!-- HERO -->
@@ -126,6 +193,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Mataró, Arenys de Mar, Premià de Mar, Vilassar de Mar, Sant Andreu de Llavaneres y localidades cercanas de la comarca del Maresme.</p>
 </section>
 
+<!-- QUIÉN SOY -->
 <div class="titulos" id="quien">
 <h2>¿Quién soy?</h2>
 </div>
@@ -135,15 +203,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <img src="fontanero.avif" alt="Fontanero realizando reparación en Mataró">
 </div>
 <div class="contenido">
-<p>
-Profesionales de fontanería en Mataró con amplia experiencia en reparaciones domésticas, urgencias y mantenimiento de tuberías, grifos y desagües. Servicio rápido, cuidadoso y confiable.
-</p>
+<p>Profesionales de fontanería en Mataró con amplia experiencia en reparaciones domésticas, urgencias y mantenimiento de tuberías, grifos y desagües. Servicio rápido, cuidadoso y confiable.</p>
 </div>
 <div class="lado derecha">
 <img src="fontanero.avif" alt="Asistencia de fontanero disponible en Mataró">
 </div>
 </section>
 
+<!-- GALERÍA -->
 <div class="titulos" id="galeria">
 <h2>Galería de trabajos</h2>
 </div>
@@ -165,10 +232,7 @@ Profesionales de fontanería en Mataró con amplia experiencia en reparaciones d
 </div>
 
 <section class="ciudades">
-<p class="ciudades-intro">
-Trabajamos en Mataró y alrededores como Arenys de Mar, Premià de Mar, Vilassar de Mar y Sant Andreu de Llavaneres. Llámanos para atención inmediata.
-</p>
-
+<p class="ciudades-intro">Trabajamos en Mataró y alrededores como Arenys de Mar, Premià de Mar, Vilassar de Mar y Sant Andreu de Llavaneres. Llámanos para atención inmediata.</p>
 <div class="columnas">
 <div class="columna">
 <h3 class="ciudades-titulo">Fontanero</h3>
@@ -188,6 +252,7 @@ Trabajamos en Mataró y alrededores como Arenys de Mar, Premià de Mar, Vilassar
 </div>
 </section>
 
+<!-- CONTACTO -->
 <div class="titulos" id="contacto">
 <h2>Contacto</h2>
 </div>
@@ -198,10 +263,7 @@ Trabajamos en Mataró y alrededores como Arenys de Mar, Premià de Mar, Vilassar
 </div>
 <div class="contenido">
 <p><b>Horario:</b> 24 horas al día</p>
-<p>
-<b>Teléfono / WhatsApp:</b>
-<a class="telefono" href="tel:+34687503604">687 50 36 04</a>
-</p>
+<p><b>Teléfono / WhatsApp:</b> <a class="telefono" href="tel:+34687503604">687 50 36 04</a></p>
 <p><b>Ubicación:</b> Mataró, España</p>
 </div>
 <div class="lado derecha">
@@ -209,6 +271,7 @@ Trabajamos en Mataró y alrededores como Arenys de Mar, Premià de Mar, Vilassar
 </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
 © Multiservicios cc - 
 <a href="aviso-legal.html" style="color:#facc15;">Aviso Legal</a> |
@@ -216,6 +279,44 @@ Trabajamos en Mataró y alrededores como Arenys de Mar, Premià de Mar, Vilassar
 <a href="politica.html" style="color:#facc15;">Política de Cookies</a>
 </footer>
 
+<!-- ESTRUCTURA DEL BANNER DE COOKIES -->
+<div id="cookie-banner">
+    <p>Utilizamos cookies propias y de terceros para analizar nuestros servicios y mostrarle publicidad relacionada con sus preferencias mediante el análisis de sus hábitos de navegación (por ejemplo, páginas visitadas). Puede aceptar todas las cookies pulsando el botón "Aceptar" o configurarlas/rechazarlas en nuestro banner. Para más información consulte nuestra <a href="politica.html">Política de Cookies</a>.</p>
+    <div class="cookie-buttons">
+        <button class="cookie-btn deny" onclick="acceptCookies(false)">Rechazar</button>
+        <button class="cookie-btn accept" onclick="acceptCookies(true)">Aceptar todas</button>
+    </div>
+</div>
+
+<!-- LÓGICA DE CONTROL DE COOKIES Y CONSENT MODE V2 -->
+<script>
+function setConsent(accepted) {
+    var status = accepted ? 'granted' : 'denied';
+    gtag('consent', 'update', {
+        'ad_storage': status,
+        'ad_user_data': status,
+        'ad_personalization': status,
+        'analytics_storage': status
+    });
+}
+
+function acceptCookies(agreed) {
+    localStorage.setItem('cookieConsent', agreed ? 'accepted' : 'denied');
+    setConsent(agreed);
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var consent = localStorage.getItem('cookieConsent');
+    if (!consent) {
+        document.getElementById('cookie-banner').style.display = 'block';
+    } else if (consent === 'accepted') {
+        setConsent(true);
+    }
+});
+</script>
+
+<!-- SCHEMAS JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -277,6 +378,7 @@ Trabajamos en Mataró y alrededores como Arenys de Mar, Premià de Mar, Vilassar
 }
 </script>
 
+<!-- BOTONES CONTACTO -->
 <a href="https://wa.me/34687503604" class="whatsapp" target="_blank" aria-label="Contactar por WhatsApp">
 <img src="Digital_Glyph_Green.svg" alt="Contactar fontanero por WhatsApp en Mataró">
 </a>
