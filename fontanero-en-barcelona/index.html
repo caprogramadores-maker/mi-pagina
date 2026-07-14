@@ -1,6 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- 1. INICIALIZACIÓN DE GOOGLE CONSENT MODE V2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // Leemos si el usuario ya tomó una decisión en el pasado
+  var consent = localStorage.getItem("cookies_consent");
+  
+  // Si no ha decidido o ha rechazado, bloqueamos todo por defecto
+  if (!consent || consent === "rejected") {
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  } else {
+    // Si ya aceptó en el pasado, permitimos el rastreo
+    gtag('consent', 'default', {
+      'ad_storage': 'granted',
+      'analytics_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted'
+    });
+  }
+</script>
+
+<!-- 2. CARGA DE TU ETIQUETA DE GOOGLE -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-8926918711"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'AW-8926918711');
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -602,10 +635,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 (function(){
   var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  
   // nav shadow
   var nav=document.getElementById("nav");
   var onsc=function(){ if(window.scrollY>10) nav.classList.add("scrolled"); else nav.classList.remove("scrolled"); };
   window.addEventListener("scroll",onsc,{passive:true}); onsc();
+  
   // H1 word reveal
   var h1=document.querySelector(".hero h1");
   if(h1 && !reduce){
@@ -618,6 +653,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     h1.querySelectorAll(".wrd").forEach(function(w,i){w.style.transitionDelay=(0.06+i*0.05)+"s"});
     requestAnimationFrame(function(){requestAnimationFrame(function(){h1.classList.add("go")})});
   }
+  
   // progress
   var prog=document.getElementById("prog"),ticking=false;
   function onScroll(){
@@ -627,6 +663,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   window.addEventListener("scroll",function(){if(!ticking){requestAnimationFrame(onScroll);ticking=true}},{passive:true});
   onScroll();
+  
   // reveals
   var rv=document.querySelectorAll(".rv");
   if("IntersectionObserver" in window && !reduce){
@@ -643,6 +680,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     },{threshold:0.12,rootMargin:"0px 0px -40px 0px"});
     rv.forEach(function(el){io.observe(el)});
   } else { rv.forEach(function(el){el.classList.add("in")}); }
+  
   // FAQ
   document.querySelectorAll(".fi-q").forEach(function(btn){
     btn.addEventListener("click",function(){
@@ -651,8 +689,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if(!open){fi.classList.add("open");an.style.maxHeight=an.scrollHeight+"px"}
     });
   });
-  // dataLayer para GTM/Google Ads (conversiones de contacto)
-  window.dataLayer=window.dataLayer||[];
+  
+  // LÓGICA DEL BANNER DE COOKIES (Consent Mode v2)
+  var banner = document.getElementById("cookieBanner");
+  var acceptBtn = document.getElementById("acceptCookies");
+  var rejectBtn = document.getElementById("rejectCookies");
+
+  // Si el usuario no ha tomado una decisión previa, mostramos el banner tras 1 segundo
+  if (!localStorage.getItem("cookies_consent")) {
+    setTimeout(function() {
+      banner.classList.add("show");
+    }, 1000);
+  }
+
+  // Comportamiento al hacer clic en "Aceptar"
+  acceptBtn.addEventListener("click", function() {
+    localStorage.setItem("cookies_consent", "accepted");
+    // Actualizamos el consentimiento a permitido para Google
+    gtag('consent', 'update', {
+      'ad_storage': 'granted',
+      'analytics_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted'
+    });
+    banner.classList.remove("show");
+  });
+
+  // Comportamiento al hacer clic en "Rechazar"
+  rejectBtn.addEventListener("click", function() {
+    localStorage.setItem("cookies_consent", "rejected");
+    // Explicitamente le decimos a Google que mantenga bloqueadas las cookies
+    gtag('consent', 'update', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    banner.classList.remove("show");
+  });
+  
+  // dataLayer para clicks de contacto
   document.querySelectorAll("[data-c]").forEach(function(el){
     el.addEventListener("click",function(){
       window.dataLayer.push({event:"contacto_click",contacto_tipo:el.getAttribute("data-c")});
@@ -660,5 +736,140 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 })();
 </script>
+<style>
+  .cookie-banner {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.2);
+    padding: 20px;
+    z-index: 999999;
+    font-family: 'Lexend', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+  }
+
+  .cookie-banner.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .cookie-tx {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #334155;
+    margin: 0;
+  }
+
+  .cookie-tx a {
+    color: #0a4da2;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  .cookie-tx a:hover {
+    color: #073a7b;
+  }
+
+  .cookie-btns {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+  }
+
+  .cookie-btn {
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 110px;
+  }
+
+  /* Botón Rechazar: Estilo minimalista y limpio */
+  .cookie-reject {
+    background: #f1f5f9;
+    color: #64748b;
+  }
+
+  .cookie-reject:hover {
+    background: #e2e8f0;
+    color: #475569;
+  }
+
+  /* Botón Aceptar: Llamativo en azul corporativo */
+  .cookie-accept {
+    background: #0a4da2;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(10, 77, 162, 0.15);
+  }
+
+  .cookie-accept:hover {
+    background: #073a7b;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(10, 77, 162, 0.25);
+  }
+
+  .cookie-accept:active {
+    transform: translateY(0);
+  }
+
+  /* ADAPTACIÓN EXCLUSIVA PARA MÓVILES (Pantallas de menos de 640px) */
+  @media (max-width: 640px) {
+    .cookie-banner {
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      padding: 16px;
+      gap: 14px;
+      border-radius: 12px;
+    }
+
+    .cookie-tx {
+      font-size: 13px;
+    }
+
+    .cookie-btns {
+      flex-direction: column-reverse; /* El botón principal queda arriba en móviles para facilitar el click */
+      gap: 8px;
+    }
+
+    .cookie-btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 14px;
+    }
+  }
+</style>
+
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-tx">
+    Utilizamos cookies para analizar nuestros servicios y mostrarle publicidad personalizada según su navegación. Puede aceptar todas las cookies o configurarlas/rechazarlas. Consulte nuestra <a href="/politica-de-cookies" target="_blank" rel="noopener">Política de Cookies</a>.
+  </div>
+  <div class="cookie-btns">
+    <button id="rejectCookies" class="cookie-btn cookie-reject">Rechazar</button>
+    <button id="acceptCookies" class="cookie-btn cookie-accept">Aceptar</button>
+  </div>
+</div>
 </body>
 </html>
