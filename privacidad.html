@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KGF39WL4');</script>
-<!-- End Google Tag Manager --> 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Política de Privacidad - Multiservicios cc</title>
@@ -449,54 +442,8 @@ function cambiarIdiomaPrivacidad(idioma) {
     </div>
 </main>
 
-<!-- BANNER DE COOKIES -->
-<div id="cookie-banner" class="cookie-banner" style="display: none;">
-    <div class="cookie-content">
-        <p id="cookie-text">Utilizamos cookies propias y de terceros (Google Ads) para fines técnicos y publicitarios. Puede aceptar todas las cookies o configurarlas.</p>
-        <div class="cookie-buttons">
-            <button id="btn-accept-all" onclick="acceptAllCookies()">Aceptar todas</button>
-            <button id="btn-deny-all" onclick="denyAllCookies()">Rechazar</button>
-            <a href="politica.html" id="cookie-info-link">Más información</a>
-        </div>
-    </div>
-</div>
 
-<script>
-// Lógica para el control del Banner y Google Consent Mode v2
-function updateConsent(analytics, adStorage) {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        'event': 'consent_update',
-        'analytics_storage': analytics,
-        'ad_storage': adStorage,
-        'ad_user_data': adStorage,
-        'ad_personalization': adStorage
-    });
-}
 
-function acceptAllCookies() {
-    localStorage.setItem('cookieConsent', 'granted');
-    updateConsent('granted', 'granted');
-    document.getElementById('cookie-banner').style.display = 'none';
-}
-
-function denyAllCookies() {
-    localStorage.setItem('cookieConsent', 'denied');
-    updateConsent('denied', 'denied');
-    document.getElementById('cookie-banner').style.display = 'none';
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-    const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
-        document.getElementById('cookie-banner').style.display = 'block';
-    } else if (consent === 'granted') {
-        updateConsent('granted', 'granted');
-    } else {
-        updateConsent('denied', 'denied');
-    }
-});
-</script>
-
+    
 </body>
 </html>
