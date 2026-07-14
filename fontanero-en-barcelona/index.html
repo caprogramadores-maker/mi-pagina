@@ -736,23 +736,102 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 })();
 </script>
+// FAQ
+  document.querySelectorAll(".fi-q").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var fi=btn.parentElement,an=fi.querySelector(".fi-a"),open=fi.classList.contains("open");
+      document.querySelectorAll(".fi.open").forEach(function(o){o.classList.remove("open");o.querySelector(".fi-a").style.maxHeight="0px"});
+      if(!open){fi.classList.add("open");an.style.maxHeight=an.scrollHeight+"px"}
+    });
+  });
+  
+  // LÓGICA DE SEGURIDAD PARA COOKIES
+  var getConsent = function() {
+    try {
+      return localStorage.getItem("cookies_consent");
+    } catch(e) {
+      return window.temp_cookies_consent || null;
+    }
+  };
+
+  var setConsent = function(val) {
+    try {
+      localStorage.setItem("cookies_consent", val);
+    } catch(e) {
+      window.temp_cookies_consent = val;
+    }
+  };
+
+  // Mostrar el banner si no hay decisión
+  var banner = document.getElementById("cookieBanner");
+  var acceptBtn = document.getElementById("acceptCookies");
+  var rejectBtn = document.getElementById("rejectCookies");
+
+  if (!getConsent()) {
+    setTimeout(function() {
+      if (banner) banner.classList.add("show");
+    }, 1000);
+  }
+
+  // Comportamiento "Aceptar"
+  if (acceptBtn) {
+    acceptBtn.addEventListener("click", function() {
+      setConsent("accepted");
+      if (typeof gtag === "function") {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'analytics_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted'
+        });
+      }
+      if (banner) banner.classList.remove("show");
+    });
+  }
+
+  // Comportamiento "Rechazar"
+  if (rejectBtn) {
+    rejectBtn.addEventListener("click", function() {
+      setConsent("rejected");
+      if (typeof gtag === "function") {
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied'
+        });
+      }
+      if (banner) banner.classList.remove("show");
+    });
+  }
+  
+  // dataLayer para clicks de contacto
+  document.querySelectorAll("[data-c]").forEach(function(el){
+    el.addEventListener("click",function(){
+      if (window.dataLayer) {
+        window.dataLayer.push({event:"contacto_click",contacto_tipo:el.getAttribute("data-c")});
+      }
+    });
+  });
+})();
+</script>
+
 <style>
   .cookie-banner {
     position: fixed;
-    bottom: 24px;
-    left: 24px;
-    right: 24px;
-    max-width: 600px;
-    margin: 0 auto;
+    bottom: 90px; /* Evita que en móvil tape la barra flotante de llamada rápida */
+    left: 20px;
+    right: 20px;
+    max-width: 500px;
     background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(14, 27, 43, 0.1);
     border-radius: 16px;
-    box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.2);
+    box-shadow: 0 12px 36px rgba(14, 27, 43, 0.2);
     padding: 20px;
-    z-index: 999999;
-    font-family: 'Lexend', sans-serif;
+    z-index: 10000; /* Prioridad por encima de todo */
+    font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -762,6 +841,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     pointer-events: none;
   }
 
+  /* Vista elegante flotando a la izquierda en PC */
+  @media (min-width: 768px) {
+    .cookie-banner {
+      left: 24px;
+      right: auto;
+      bottom: 24px;
+      max-width: 400px;
+    }
+  }
+
   .cookie-banner.show {
     opacity: 1;
     transform: translateY(0);
@@ -769,16 +858,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   .cookie-tx {
-    font-size: 14px;
+    font-size: 13.5px;
     line-height: 1.5;
-    color: #334155;
+    color: #4a5b6e;
     margin: 0;
   }
 
   .cookie-tx a {
     color: #0a4da2;
     text-decoration: underline;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .cookie-tx a:hover {
@@ -787,77 +876,70 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   .cookie-btns {
     display: flex;
-    gap: 12px;
-    justify-content: flex-end;
+    gap: 10px;
   }
 
   .cookie-btn {
-    font-family: 'Lexend', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 10px 20px;
-    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 700;
+    padding: 11px 18px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
+    flex: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 110px;
   }
 
-  /* Botón Rechazar: Estilo minimalista y limpio */
+  /* Botón Rechazar */
   .cookie-reject {
     background: #f1f5f9;
     color: #64748b;
+    border: 1px solid #e2e8f0;
   }
 
   .cookie-reject:hover {
     background: #e2e8f0;
-    color: #475569;
+    color: #334155;
   }
 
-  /* Botón Aceptar: Llamativo en azul corporativo */
+  /* Botón Aceptar */
   .cookie-accept {
-    background: #0a4da2;
+    background: linear-gradient(135deg, #0a4da2, #1275d6);
     color: #ffffff;
-    box-shadow: 0 4px 12px rgba(10, 77, 162, 0.15);
+    box-shadow: 0 4px 14px rgba(10, 77, 162, 0.2);
   }
 
   .cookie-accept:hover {
-    background: #073a7b;
     transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(10, 77, 162, 0.25);
+    box-shadow: 0 6px 18px rgba(10, 77, 162, 0.35);
   }
 
   .cookie-accept:active {
     transform: translateY(0);
   }
 
-  /* ADAPTACIÓN EXCLUSIVA PARA MÓVILES (Pantallas de menos de 640px) */
-  @media (max-width: 640px) {
+  /* Adaptación total para móviles */
+  @media (max-width: 600px) {
     .cookie-banner {
-      bottom: 16px;
-      left: 16px;
-      right: 16px;
+      bottom: 85px; /* Altura perfecta por encima del botón de llamada de la web */
+      left: 12px;
+      right: 12px;
       padding: 16px;
-      gap: 14px;
+      gap: 12px;
       border-radius: 12px;
     }
 
     .cookie-tx {
-      font-size: 13px;
-    }
-
-    .cookie-btns {
-      flex-direction: column-reverse; /* El botón principal queda arriba en móviles para facilitar el click */
-      gap: 8px;
+      font-size: 12.5px;
     }
 
     .cookie-btn {
-      width: 100%;
       padding: 12px;
-      font-size: 14px;
+      font-size: 13px;
     }
   }
 </style>
@@ -871,5 +953,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button id="acceptCookies" class="cookie-btn cookie-accept">Aceptar</button>
   </div>
 </div>
+
+</body>
+</html>
 </body>
 </html>
