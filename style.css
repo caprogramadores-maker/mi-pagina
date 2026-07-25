@@ -12,9 +12,9 @@ header{
     color:white;
     display:flex;
     align-items:center;
-    padding:30px 60px; /* ⬅️ más espacio */
+    padding:30px 60px;
     position:relative;
-    min-height:110px; /* ⬅️ ás alto */
+    min-height:110px;
     border-bottom:4px solid #3b82f6;
 }
 
@@ -27,7 +27,7 @@ header{
 }
 
 .logo img{
-    max-height:90px; /* ⬅️ logo más grande */
+    max-height:90px;
 }
 
 /* MENU */
@@ -42,8 +42,8 @@ nav{
     width:100%;
     max-width:600px; 
 }
-/* BOTONES MENU */
 
+/* BOTONES MENU */
 nav a{
     color:#e0f2fe;
     text-decoration:none;
@@ -55,11 +55,11 @@ nav a{
     border:1px solid rgba(255,255,255,0.2);
     backdrop-filter: blur(6px);
     transition:0.3s;
-
     display:flex;
     align-items:center;
     justify-content:center;
 }
+
 nav a:hover{
     background:#3b82f6;
     color:white;
@@ -72,7 +72,7 @@ nav a:hover{
 }
 
 .idiomas img{
-    width:45px; /* ⬅️ ligeramente más grandes */
+    width:45px;
     margin-left:12px;
     cursor:pointer;
 }
@@ -144,28 +144,61 @@ nav a:hover{
     line-height:34px;
 }
 
-/* ================= GALERIA ================= */
+/* ================= SERVICIOS (NUEVA SECCIÓN DE TARJETAS) ================= */
 
-.galeria{
+.servicios-grid {
     padding:60px 6%;
     background:#e0f2fe;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
     gap:28px;
+    max-width:1400px;
+    margin:0 auto;
 }
 
-.galeria img{
-    width:100%;
-    aspect-ratio:4/3;
-    object-fit:cover;
+.servicio-card {
+    background:#ffffff;
     border-radius:14px;
-    transition:.25s;
-    box-shadow:0 8px 25px rgba(0,0,0,.2);
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0, 0, 0, 0.1);
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
+    display:flex;
+    flex-direction:column;
+    border:1px solid rgba(10, 37, 64, 0.08);
 }
 
-.galeria img:hover{
-    transform:scale(1.05);
+.servicio-card:hover {
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(0, 0, 0, 0.18);
 }
+
+.servicio-card img {
+    width:100%;
+    height:210px;
+    object-fit:cover;
+}
+
+.servicio-info {
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+}
+
+.servicio-info h3 {
+    margin:0 0 10px 0;
+    font-size:22px;
+    color:#0a2540;
+    font-weight:bold;
+}
+
+.servicio-info p {
+    margin:0;
+    font-size:16px;
+    color:#334155;
+    line-height:1.5;
+}
+
 /* ===== SECCION CIUDADES ===== */
 
 .ciudades{
@@ -201,6 +234,7 @@ nav a:hover{
     background:#3b82f6;
     color:white;
 }
+
 /* ===== SECCION CIUDADES COLUMNAS ===== */
 .ciudades .columnas {
     display: flex;
@@ -211,7 +245,7 @@ nav a:hover{
 }
 
 .ciudades .columna {
-    flex: 1 1 250px; /* se ajusta al ancho disponible */
+    flex: 1 1 250px;
 }
 
 .ciudades .columna h3 {
@@ -225,6 +259,7 @@ nav a:hover{
     margin: 0 auto;
     padding: 0;
 }
+
 /* ===== TEXTO INTRODUCTORIO DE CIUDADES ===== */
 .ciudades .ciudades-intro {
     font-size: 18px;
@@ -243,6 +278,7 @@ nav a:hover{
     margin-bottom: 15px;
     color: #1e3a8a;
 }
+
 /* ================= INFORMACION ================= */
 
 .info{
@@ -284,7 +320,7 @@ footer{
 .whatsapp{
     position: fixed;
     right: 20px;
-    bottom: 60px; /* 🔥 SUBIMOS el botón encima del de llamar */
+    bottom: 60px;
     width: 70px;
     height: 70px;
     background-color: white;
@@ -293,7 +329,7 @@ footer{
     justify-content: center;
     align-items: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-    z-index: 4000; /* 🔥 más alto que todo */
+    z-index: 4000;
     transition: transform .2s ease, box-shadow .2s ease;
     border:3px solid #3b82f6;
 }
@@ -386,7 +422,6 @@ footer{
     display:none;
 }
 
-
 /* ===== SEO TEXTO OCULTO ===== */
 
 .seo-texto{
@@ -425,14 +460,16 @@ footer{
         grid-template-columns:1fr;
         padding:50px 20px;
     }
+
     body{
         padding-bottom: 66px;
     }
+
     .lado{
         display:none;
     }
 
-    /* 🔥 HEADER FIX REAL */
+    /* HEADER RESPONSIVE */
     header{
         flex-direction:column;
         align-items:center;
@@ -459,7 +496,6 @@ footer{
         margin-top:10px;
     }
 
-    /* opcional pero recomendado */
     nav a{
         width:80%;
         text-align:center;
@@ -468,19 +504,18 @@ footer{
     .hero-texto{
         padding:30px 40px;
     }
-    /* 🔥 HERO RESPONSIVE FIX */
 
+    /* HERO RESPONSIVE */
     .hero{
         padding:40px 10px;
     }
 
     .hero-texto{
-        padding:25px 15px; /* menos padding lateral */
+        padding:25px 15px;
         width:100%;
         max-width:100%;
     }
 
-    /* texto adaptable */
     .hero-texto .marca{
         font-size:clamp(28px, 8vw, 56px);
         word-break:break-word;
@@ -491,46 +526,35 @@ footer{
         line-height:1.3;
         word-break:break-word;
     }
+
+    /* SERVICIOS EN MÓVIL */
+    .servicios-grid {
+        padding: 40px 15px;
+        gap: 20px;
+    }
+
+    /* BOTÓN LLAMAR EN MÓVIL */
     .llamar-fijo{
-        display:flex;
+        display: flex;
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        background: #000000; /* verde tipo llamada */
+        background: #000000;
         color: white;
         text-align: center;
-        padding: 18px;
         font-size: 22px;
         font-weight: bold;
         text-decoration: none;
-        z-index: 3000;
+        padding: 18px;
+        z-index: 3500;
+        justify-content: center;
+        align-items: center;
         box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
         transition: 0.3s;
     }
-/* ===== BOTÓN LLAMAR EN MÓVIL ===== */
-
-    .llamar-fijo{
-        display: flex;              /* Se muestra */
-        position: fixed;            /* Flotante */
-        bottom: 0;                  /* Pegado abajo */
-        left: 0;                    
-        width: 100%;                /* Ancho completo */
-        background: #000000;        /* Verde tipo llamada */
-        color: white;
-        text-align: center;
-        font-size: 22px;
-        font-weight: bold;
-        text-decoration: none;
-        padding: 18px;
-        z-index: 3500;              /* Entre WhatsApp y contenido */
-        
-        justify-content: center;    /* Centrar horizontal */
-        align-items: center;        /* Centrar vertical */
-    }
 
     .llamar-fijo:hover{
-        background: #000000;        /* Verde más oscuro al pasar el ratón */
+        background: #000000;
     }
 }
-
