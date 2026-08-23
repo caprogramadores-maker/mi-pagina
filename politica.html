@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Cookies - Multiservicios cc</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="shortcut icon" href="favicon-32x32.png">
+<link rel="apple-touch-icon" href="favicon-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+
+<script>
+const traduccionesCookies = {
+    es: {
+        tituloCookies: "Política de Cookies",
+        AplicacionCookiesTitulo: "Introducción",
+        aplicacionCookiesTexto1: "Esta Política de Cookies se aplica al sitio web ",
+        AplicacionEnlace2: "https://rapidservice24horas.com",
+        queSonTitulo: "¿Qué son las cookies?",
+        queSonTexto1: "Las cookies son pequeños archivos de texto que se almacenan en el dispositivo del usuario cuando visita un sitio web. Permiten que la página recuerde información sobre su visita, optimice su experiencia y ayude a gestionar campañas publicitarias.",
+        tiposTitulo: "Tipos de cookies utilizadas",
+        tiposTexto1: "Este sitio web utiliza cookies técnicas necesarias para el correcto funcionamiento del servidor y cookies de terceros gestionadas por Google con fines analíticos y publicitarios.",
+        tiposTexto2: "En particular, utilizamos servicios como Google Ads para mostrar anuncios basados en los intereses y hábitos de navegación de los usuarios.",
+        tiposLista: [
+            "Cookies técnicas: estrictamente necesarias para permitir la navegación, seguridad y el funcionamiento básico del sitio web.",
+            "Cookies de publicidad y personalización (Google Ads): cookies de terceros que recopilan información sobre sus visitas y navegación para mostrarle anuncios personalizados adaptados a sus intereses.",
+            "Cookies de consentimiento: registran si el usuario ha aceptado o rechazado la política de privacidad mediante el banner de cookies."
+        ],
+        baseLegalCookiesTitulo: "Base jurídica y consentimiento",
+        baseLegalCookiesTexto1: "La utilización de cookies técnicas se basa en el interés legítimo del titular conforme al artículo 6.1.f del RGPD. No requieren consentimiento.",
+        baseLegalCookiesTexto2: "La instalación de cookies publicitarias y de personalización de Google Ads se realiza únicamente bajo el consentimiento explícito del usuario, conforme al artículo 22.2 de la LSSI-CE y mediante la tecnología Google Consent Mode v2 instalada en el sitio.",
+        gestionTitulo: "Gestión, aceptación y desactivación de cookies",
+        gestionTexto1: "El usuario puede revocar su consentimiento o configurar las cookies directamente en su navegador web (bloqueando o eliminando el historial de almacenamiento).",
+        gestionTexto2: "Recuerde que si desactiva las cookies técnicas, ciertas funcionalidades del sitio o la seguridad del mismo podrían verse afectadas.",
+        tercerosTitulo: "Cookies de terceros y Google Ads",
+        tercerosTexto: "Este sitio transfiere datos de manera segura a Google Ireland Limited para medir el rendimiento de nuestros anuncios y personalizar las ofertas que recibe en la red de publicidad de Google.",
+        conservacionCookiesTitulo: "Conservación de datos",
+        conservacionCookiesTexto: "Las cookies de Google Ads se conservan en su navegador durante el periodo establecido por las políticas de privacidad de Google (habitualmente entre unos días y un máximo de 24 meses, salvo que las borre manualmente).",
+        derechosCookiesTitulo: "Derechos del usuario",
+        derechosCookiesTexto1: "El usuario puede ejercer sus derechos de acceso, rectificación, supresión y oposición enviando una solicitud al correo electrónico indicado en la ",
+        politicaPrivacidadLink: "Política de Privacidad",
+        modificacionesCookiesTitulo: "Modificaciones",
+        modificacionesCookiesTexto: "El titular se reserva el derecho a modificar la presente Política de Cookies para adaptarla a novedades legislativas o variaciones en los servicios de Google Ads.",
+        avisoLegalLink: "Aviso Legal",
+        volver: "← Volver a la página principal"
+    },
+    cat: {
+        tituloCookies: "Política de Cookies",
+        AplicacionCookiesTitulo: "Introducció",
+        aplicacionCookiesTexto1: "Aquesta Política de Cookies s'aplica al lloc web ",
+        AplicacionEnlace2: "https://rapidservice24horas.com",
+        queSonTitulo: "Què són les cookies?",
+        queSonTexto1: "Les cookies són petits fitxers de text que s'emmagatzemen al dispositiu de l'usuari quan visita un lloc web. Permeten que la pàgina recordi informació sobre la seva visita, optimitzi la seva experiència i ajudi a gestionar campanyes publicitàries.",
+        tiposTitulo: "Tipus de cookies utilitzades",
+        tiposTexto1: "Aquest lloc web utilitza cookies tècniques necessàries per al correcte funcionament del servidor i cookies de tercers gestionades per Google amb finalitats analítiques i publicitàries.",
+        tiposTexto2: "En particular, utilitzem serveis com Google Ads per mostrar anuncis basats en els interessos i hàbits de navegació dels usuaris.",
+        tiposLista: [
+            "Cookies tècniques: estrictament necessàries per permetre la navegació, seguretat i el funcionament bàsic del lloc web.",
+            "Cookies de publicitat i personalització (Google Ads): cookies de tercers que recopilen informació sobre les seves visites i navegació per mostrar-li anuncis personalitzats adaptats als seus interessos.",
+            "Cookies de consentiment: registren si l'usuari ha acceptat o rebutjat la política de privacitat mitjançant el bàner de cookies."
+        ],
+        baseLegalCookiesTitulo: "Base jurídica i consentiment",
+        baseLegalCookiesTexto1: "L'ús de cookies tècniques es basa en l'interès legítim del titular conforme a l'article 6.1.f del RGPD. No requereixen consentiment.",
+        baseLegalCookiesTexto2: "La instal·lació de cookies publicitàries i de personalització de Google Ads es realitza únicament sota el consentiment explícit de l'usuari, conforme a l'article 22.2 de la LSSI-CE i mitjançant la tecnologia Google Consent Mode v2 instal·lada al lloc.",
+        gestionTitulo: "Gestió, acceptació i desactivació de cookies",
+        gestionTexto1: "L'usuari pot revocar el seu consentiment o configurar les cookies directament al seu navegador web (bloquejant o eliminant l'historial d'emmagatzematge).",
+        gestionTexto2: "Recordeu que si desactiveu les cookies tècniques, certes funcionalitats del lloc o la seva seguretat es podrien veure afectades.",
+        tercerosTitulo: "Cookies de tercers i Google Ads",
+        tercerosTexto: "Aquest lloc transfereix dades de manera segura a Google Ireland Limited per mesurar el rendiment dels nostres anuncis i personalitzar les ofertes que rep a la xarxa de publicitat de Google.",
+        conservacionCookiesTitulo: "Conservació de dades",
+        conservacionCookiesTexto: "Les cookies de Google Ads es conserven al seu navegador durant el període establert per les polítiques de privacitat de Google (habitualment entre uns dies i un màxim de 24 mesos, llevat que les esborri manualment).",
+        derechosCookiesTitulo: "Drets de l'usuari",
+        derechosCookiesTexto1: "L'usuari pot exercir els seus drets d'accés, rectificació, supressió i oposició enviant una sol·licitud al correu electrònic indicat a la ",
+        politicaPrivacidadLink: "Política de Privacitat",
+        modificacionesCookiesTitulo: "Modificacions",
+        modificacionesCookiesTexto: "El titular es reserva el dret de modificar la present Política de Cookies per adaptar-la a novetats legislatives o variacions en els serveis de Google Ads.",
+        avisoLegalLink: "Avís Legal",
+        volver: "← Tornar a la pàgina principal"
+    },
+    en: {
+        tituloCookies: "Cookies Policy",
+        AplicacionCookiesTitulo: "Introduction",
+        aplicacionCookiesTexto1: "This Cookies Policy applies to the website ",
+        AplicacionEnlace2: "https://rapidservice24horas.com",
+        queSonTitulo: "What are cookies?",
+        queSonTexto1: "Cookies are small text files stored on the user's device when visiting a website. They allow the page to remember information about your visit, optimize your user experience, and help manage advertising campaigns.",
+        tiposTitulo: "Types of cookies used",
+        tiposTitulo: "Types of cookies used",
+        tiposTexto1: "This website uses technical cookies necessary for the correct operation of the server and third-party cookies managed by Google for analytical and advertising purposes.",
+        tiposTexto2: "In particular, we use services such as Google Ads to display advertisements based on users' interests and browsing habits.",
+        tiposLista: [
+            "Technical cookies: strictly necessary to enable basic navigation, security, and the main functions of the website.",
+            "Advertising and personalization cookies (Google Ads): third-party cookies that collect information about your visits and browsing behavior to display personalized ads tailored to your interests.",
+            "Consent cookies: these record whether the user has accepted or declined the privacy policy via the cookie banner."
+        ],
+        baseLegalCookiesTitulo: "Legal basis and consent",
+        baseLegalCookiesTexto1: "The use of technical cookies is based on the legitimate interest of the owner according to Article 6.1.f of the GDPR. They do not require consent.",
+        baseLegalCookiesTexto2: "The installation of Google Ads advertising and personalization cookies is performed only under the explicit consent of the user, in compliance with Article 22.2 of the LSSI-CE and handled through Google Consent Mode v2 integrated into this site.",
+        gestionTitulo: "Management, acceptance, and deactivation of cookies",
+        gestionTexto1: "Users can revoke their consent or configure cookie settings directly in their web browser (blocking or deleting storage history).",
+        gestionTexto2: "Please note that if you disable technical cookies, certain website functionalities or security features may be affected.",
+        tercerosTitulo: "Third-party cookies and Google Ads",
+        tercerosTexto: "This site securely transfers data to Google Ireland Limited to measure our ad performance and personalize the offers you receive across the Google Advertising network.",
+        conservacionCookiesTitulo: "Data retention",
+        conservacionCookiesTexto: "Google Ads cookies are retained in your browser for the period specified by Google's privacy policies (usually ranging from a few days up to a maximum of 24 months, unless cleared manually).",
+        derechosCookiesTitulo: "User rights",
+        derechosCookiesTexto1: "Users can exercise their rights of access, rectification, erasure, and objection by sending a request to the email address indicated in the ",
+        politicaPrivacidadLink: "Privacy Policy",
+        modificacionesCookiesTitulo: "Modifications",
+        modificacionesCookiesTexto: "The owner reserves the right to modify this Cookies Policy to adapt it to legislative updates or changes in Google Ads services.",
+        avisoLegalLink: "Legal Notice",
+        volver: "← Back to the main page"
+    }
+};
+
+function cambiarIdiomaCookies(idioma) { 
+    document.querySelectorAll("[data-key]").forEach(elemento => {
+        const key = elemento.getAttribute("data-key");
+        const contenido = traduccionesCookies[idioma][key];
+
+        if (Array.isArray(contenido)) {
+            elemento.innerHTML = contenido.map(item => `<li>${item}</li>`).join('');
+        } else {
+            if (elemento.tagName === 'A' || elemento.tagName === 'SPAN' || elemento.tagName === 'H1' || elemento.tagName === 'H2') {
+                elemento.textContent = contenido;
+            } else {
+                let nodoTextoEncontrado = false;
+                elemento.childNodes.forEach(child => {
+                    if (child.nodeType === Node.TEXT_NODE && child.textContent.trim().length > 1) {
+                        child.textContent = contenido;
+                        nodoTextoEncontrado = true;
+                    }
+                });
+                if (!nodoTextoEncontrado && !elemento.querySelector('a')) {
+                    elemento.textContent = contenido;
+                }
+            }
+        }
+    });
+}
+</script>
+</head>
+<body>
+
+<header class="legal-header">
+    <a href="index.html" class="legal-volver">&#8592; Volver al inicio</a>
+        <div class="idiomas-legal">
+        <img src="esp.avif" alt="Español" onclick="cambiarIdiomaCookies('es')">
+        <img src="cat.avif" alt="Català" onclick="cambiarIdiomaCookies('cat')">
+        <img src="eng.avif" alt="English" onclick="cambiarIdiomaCookies('en')">
+    </div>
+    <h1 data-key="tituloCookies">Política de Cookies</h1>
+</header>
+
+<main class="legal">
+    <h2 data-key="AplicacionCookiesTitulo">Introducción</h2>
+    <p>
+        <span data-key="aplicacionCookiesTexto1">Esta Política de Cookies se aplica al sitio web </span>
+        <a href="https://rapidservice24horas.com" data-key="AplicacionEnlace2">https://rapidservice24horas.com</a>.
+    </p>
+
+    <h2 data-key="queSonTitulo">¿Qué son las cookies?</h2>
+    <p data-key="queSonTexto1">
+    Las cookies son pequeños archivos de texto que se almacenan en el dispositivo del usuario cuando visita un sitio web. Permiten que la página recuerde información sobre su visita, optimice su experiencia y ayude a gestionar campañas publicitarias.
+    </p>
+
+    <h2 data-key="tiposTitulo">Tipos de cookies utilizadas</h2>
+    <p data-key="tiposTexto1">
+    Este sitio web utiliza cookies técnicas necesarias para el correcto funcionamiento del servidor y cookies de terceros gestionadas por Google con fines analíticos y publicitarios.
+    </p>
+    <p data-key="tiposTexto2">
+    En particular, utilizamos servicios como Google Ads para mostrar anuncios basados en los intereses y hábitos de navegación de los usuarios.
+    </p>
+
+    <ul data-key="tiposLista">
+        <li>Cookies técnicas: estrictamente necesarias para permitir la navegación, seguridad y el funcionamiento básico del sitio web.</li>
+        <li>Cookies de publicidad y personalización (Google Ads): cookies de terceros que recopilan información sobre sus visitas y navegación para mostrarle anuncios personalizados adaptados a sus intereses.</li>
+        <li>Cookies de consentimiento: registran si el usuario ha aceptado o rechazado la política de privacidad mediante el banner de cookies.</li>
+    </ul>
+
+    <h2 data-key="baseLegalCookiesTitulo">Base jurídica y consentimiento</h2>
+    <p data-key="baseLegalCookiesTexto1">
+    La utilización de cookies técnicas se basa en el interés legítimo del titular conforme al artículo 6.1.f del RGPD. No requieren consentimiento.
+    </p>
+    <p data-key="baseLegalCookiesTexto2">
+    La instalación de cookies publicitarias y de personalización de Google Ads se realiza únicamente bajo el consentimiento explícito del usuario, conforme al artículo 22.2 de la LSSI-CE y mediante la tecnología Google Consent Mode v2 instalada en el sitio.
+    </p>
+
+    <h2 data-key="gestionTitulo">Gestión, aceptación y desactivación de cookies</h2>
+    <p data-key="gestionTexto1">
+    El usuario puede revocar su consentimiento o configurar las cookies directamente en su navegador web (bloqueando o eliminando el historial de almacenamiento).
+    </p>
+    <p data-key="gestionTexto2">
+    Recuerde que si desactiva las cookies técnicas, ciertas funcionalidades del sitio o la seguridad del mismo podrían verse afectadas.
+    </p>
+
+    <h2 data-key="tercerosTitulo">Cookies de terceros y Google Ads</h2>
+    <p data-key="tercerosTexto">
+    Este sitio transfiere datos de manera segura a Google Ireland Limited para medir el rendimiento de nuestros anuncios y personalizar las ofertas que recibe en la red de publicidad de Google.
+    </p>
+
+    <h2 data-key="conservacionCookiesTitulo">Conservación de datos</h2>
+    <p data-key="conservacionCookiesTexto">
+    Las cookies de Google Ads se conservan en su navegador durante el periodo establecido por las políticas de privacidad de Google (habitualmente entre unos días y un máximo de 24 meses, salvo que las borre manualmente).
+    </p>
+
+    <h2 data-key="derechosCookiesTitulo">Derechos del usuario</h2>
+    <p>
+        <span data-key="derechosCookiesTexto1">El usuario puede ejercer sus derechos de acceso, rectificación, supresión y oposición enviando una solicitud al correo electrónico indicado en la </span>
+        <a href="privacidad.html" data-key="politicaPrivacidadLink">Política de Privacidad</a>.
+    </p>
+
+    <h2 data-key="modificacionesCookiesTitulo">Modificaciones</h2>
+    <p data-key="modificacionesCookiesTexto">
+    El titular se reserva el derecho a modificar la presente Política de Cookies para adaptarla a novedades legislativas o variaciones en los servicios de Google Ads.
+    </p>
+
+    <div class="volver-principal">
+        <a href="aviso-legal.html" data-key="avisoLegalLink">Aviso Legal</a> |
+        <a href="privacidad.html" data-key="politicaPrivacidadLink">Política de Privacidad</a> |
+        <a href="index.html" data-key="volver">← Volver a la página principal</a>
+    </div>
+</main>
+
+</body>
+</html>
